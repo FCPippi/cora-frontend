@@ -1,0 +1,61 @@
+
+
+.FaixaEtaria {
+    width: 200px;
+    background-color: rgb(255, 255, 255);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 21px;
+    padding: 15px;
+    border:10px solid rgb(223, 56, 65);
+    flex-direction: row;
+    align-items: center;
+    gap: 10px; 
+}
+
+.texto {
+    color: rgb(119,119,119);
+    font-family: "Cherry Bomb One";
+    margin: 0 0 5px 0;
+    font-size: 24px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 175px; 
+    margin-bottom: 0.5px;
+}
+
+.checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    position: relative;
+    border: 3px solid rgb(119,119,119);
+    border-radius: 4px;
+    position: relative;
+    left: 30px;
+    vertical-align: middle;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.checkbox:checked{
+    background-color: rgb(119,119,119);
+    border-color: rgb(119,119,119);
+}
+
+.checkbox:checked::after {
+  content: "✓";
+  color: white;
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
