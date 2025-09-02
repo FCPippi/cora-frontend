@@ -1,6 +1,4 @@
 import "../styles/AgeRangeStyle.css";
-import React from "react";
-
 
 function AgeRange(){
     return(
