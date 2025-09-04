@@ -5,15 +5,7 @@ import CardModule from "./components/CardModule"
 function App() {
 
   return (
-    
-      
-      <CardModule/>
-
-      
-    
-
-
-    
+      <><CoraLogoIcon /><AgeRange /><CardModule /></>
   )
 }
 
