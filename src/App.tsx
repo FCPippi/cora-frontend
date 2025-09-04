@@ -1,15 +1,16 @@
 import CoraLogoIcon from "./icons/CoraLogoIcon"
 import AgeRange from "./components/AgeRange"
+import CardModule from "./components/CardModule"
 
 function App() {
 
   return (
-    <>
-      <CoraLogoIcon />
-      <AgeRange/>
-      <h1>Main page</h1>
+    
       
-    </>
+      <CardModule/>
+
+      
+    
 
 
     
