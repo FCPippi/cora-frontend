@@ -16,8 +16,9 @@ function CardModule() {
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias, nam corrupti blanditiis ad quam incidunt voluptatum, ipsam dicta quo, quisquam commodi nihil officia velit repudiandae ipsum labore consequatur voluptatem odio!
         </p>
-        <span className="AgeRange">9-12 anos</span>
       </div>
+
+      <span className="AgeRange">9-12 anos</span>
     </div>
   );
 }
