@@ -5,9 +5,13 @@ interface CircleGreenHeartIconProps extends SVGProps<SVGSVGElement> {
   circleColor?: string;
   rotate?: number; // ângulo em graus
   direction?: "left" | "right"; // nova prop
+  width?: number;
+  height?: number;
 }
 
 const CircleGreenHeartIcon = ({
+  width = 415,
+  height = 415,
   color = "#76BCD7",
   circleColor = "#FFFFFF",
   direction = "left",
@@ -16,12 +20,12 @@ const CircleGreenHeartIcon = ({
   const greenColor = "#61BC55";
 
   // Se direção for "left", inverte o sinal da rotação
-  const angle = direction === "right" ? 90 : 0
+  const angle = direction === "right" ? 90 : 0;
 
   return (
     <svg
-      width="415"
-      height="415"
+      width={width}
+      height={height}
       viewBox="0 0 415 415"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -47,4 +51,3 @@ const CircleGreenHeartIcon = ({
 };
 
 export default CircleGreenHeartIcon;
-
