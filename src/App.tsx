@@ -1,6 +1,5 @@
 import { Navbar } from "./components/Navbar/Navbar"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import CoraLogoIcon from "./icons/CoraLogoIcon"
 
 function App() {
 
