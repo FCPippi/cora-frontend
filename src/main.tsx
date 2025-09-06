@@ -4,7 +4,7 @@ import App from './App.tsx'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 import Module from './components/Module/Module.tsx'
-
+import ViewModule from './components/ViewModule/ViewModule.tsx'
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
@@ -13,7 +13,8 @@ createRoot(document.getElementById('root') as HTMLElement).render(
         <Route path="/" element={<App />} />
 
         {/* Tela de módulo !!!!*/}
-        <Route path="/module" element={<Module />} />
+        <Route path="/create-module" element={<Module />} />
+        <Route path="/module" element={<ViewModule />} />
 
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
