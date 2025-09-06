@@ -1,0 +1,193 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fefefe;
+}
+
+.container {
+  margin-top: 100px;
+}
+
+.container-title {
+  text-align: center;
+  font-size: 28px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  background: #D9D9D9;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.title {
+  text-align: center;
+  font-family: "Cherry Bomb One", cursive;
+  color: #ED67A3;
+  font-size: 20px;
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.title-age-group {
+  font-family: "Cherry Bomb One", cursive;
+  color: #ED67A3;
+  font-size: 24px;
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.age-box {
+  display: flex;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  background: #D9D9D9;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  gap: 20px;
+  align-items: baseline;
+}
+
+.checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-weight: bold;
+  font-family: "Cherry Bomb One";
+  color: #777777;
+  font-size: 17px;
+}
+
+.checkbox-age-group {
+  display: none;
+}
+
+.label-age-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.custom-check {
+  width: 20px;
+  height: 20px;
+  background-color: #777777;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.custom-check::after {
+  content: "";
+  width: 6px;
+  height: 10px;
+  border: solid #ccc;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.checkbox-age-group:checked+.custom-check::after {
+  opacity: 1;
+}
+
+.thumb {
+  display: flex;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  background: #D9D9D9;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  gap: 20px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.thumb-title {
+  font-family: "Cherry Bomb One", cursive;
+  color: #ED67A3;
+  font-size: 24px;
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
+.textarea-container {
+  display: flex;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  background: #D9D9D9;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  gap: 20px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.textarea {
+  background: #D9D9D9;
+  width: 100%;
+  border: 1px solid #D9D9D9;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.save-btn {
+  display: block;
+  width: 130px;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  background: #76BCD7;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: #0288d1;
+}
+
+.button-container {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background: #fff;
+}
