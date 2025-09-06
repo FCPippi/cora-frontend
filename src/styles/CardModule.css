@@ -1,0 +1,64 @@
+.Card{
+    display: flex;
+    align-items: flex-start;
+    background-color: rgb(217, 217, 217);
+    border-radius: 16px;
+    gap: 25px;
+    width: 602px;
+    height: 201px;
+    overflow: hidden;
+    
+}
+
+
+
+.Card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    
+}
+
+.Card-content h2{
+    font-family: "Cherry Bomb One";
+    color: rgb(237, 103, 163);
+    -webkit-text-stroke: 1.5px rgb(255,245,225);
+    width: 150px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+
+    
+}
+
+.Card-content p{
+    color: rgb(119,119,119);
+    font-family: "Alexandria";
+    margin-top: 10px;
+    font-size:11px;
+    margin-bottom: 25px;
+}
+
+
+.AgeRange {
+  font-weight: bold;
+  font-family: "Cherry Bomb One";
+  color: rgb(119, 119, 119);
+  font-size: 20px;
+  width: 200px;
+  margin-top: 15px;
+  margin-right: 20px;
+}
+
+
+
+.Card-image img{
+    width: 180px;
+    height: 190px;
+    margin-left: 1px;
+    object-fit: cover;
+    display: block;
+    border: 5px solid rgb(237, 103, 163);;
+    border-radius: 10px;
+}
