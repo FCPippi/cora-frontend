@@ -1,12 +1,20 @@
-import CoraLogoIcon from "./icons/CoraLogoIcon"
-import SearchBar from "./components/SearchBar"
-import AgeRange from "./components/AgeRange"
-import CardModule from "./components/CardModule"
+import { Navbar } from "./components/Navbar/Navbar"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
 
   return (
-      <><CoraLogoIcon /><SearchBar /><AgeRange /><CardModule /></>
+    <Router>
+    <Navbar/>
+      {/* <CoraLogoIcon /> */}
+       <Routes>
+        <Route path="/conta" element={<div>Página da Conta</div>} />
+        <Route path="/conteudos" element={<div>Página de Conteúdos</div>} />
+        <Route path="/forum" element={<div>Página do Fórum</div>} />
+        <Route path="/especialistas" element={<div>Página dos Especialistas</div>} />
+        <Route path="*" element={<div>Página Inicial</div>} />
+      </Routes>
+    </Router>
   )
 }
 
