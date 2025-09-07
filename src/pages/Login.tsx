@@ -9,9 +9,9 @@ import '../styles/Login.css';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
-  const [lembrarSenha, setLembrarSenha] = useState(false);
-  const [mostrarSenha, setMostrarSenha] = useState(false);
+  const [password, setPassword] = useState('');
+  const [rememberPassword, setRememberPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const [error, setError] = useState('');
@@ -22,13 +22,12 @@ const Login: React.FC = () => {
     navigate('/conteudos');
   };
 
-  const toggleSenha = () => {
-    setMostrarSenha(!mostrarSenha);
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
     <div className="login-container">
-      {/* Background Elements */}
       <div className="background-elements">
         <FatCircleIcon className="bg-circle top-left" color="#7ABBD7" width={400} height={400} />
         <CircleIcon className="bg-circle top-right" color="#FDC647" width={300} height={300} />
@@ -66,11 +65,11 @@ const Login: React.FC = () => {
             <div className="form-group">
               <div className="password-input">
                 <input
-                  type={mostrarSenha ? "text" : "password"}
+                  type={showPassword ? "text" : "password"}
                   placeholder="Senha"
-                  value={senha}
+                  value={password}
                   onChange={(e) => {
-                    setSenha(e.target.value);
+                    setPassword(e.target.value);
                     setError('');
                   }}
                   className="input-field"
@@ -78,8 +77,8 @@ const Login: React.FC = () => {
                 <button 
                   type="button" 
                   className="eye-button"
-                  onClick={toggleSenha}
-                  aria-label={mostrarSenha ? "Esconder senha" : "Mostrar senha"}
+                  onClick={togglePassword}
+                  aria-label={showPassword ? "Esconder senha" : "Mostrar senha"}
                 >
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
                     <path d="M12 5.25C7.5 5.25 3.75 8.25 2.25 12C3.75 15.75 7.5 18.75 12 18.75C16.5 18.75 20.25 15.75 21.75 12C20.25 8.25 16.5 5.25 12 5.25Z" stroke="#888" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -93,11 +92,11 @@ const Login: React.FC = () => {
               <div className="remember-me">
                 <input
                   type="checkbox"
-                  id="lembrarSenha"
-                  checked={lembrarSenha}
-                  onChange={(e) => setLembrarSenha(e.target.checked)}
+                  id="rememberPassword"
+                  checked={rememberPassword}
+                  onChange={(e) => setRememberPassword(e.target.checked)}
                 />
-                <label htmlFor="lembrarSenha">Lembrar senha</label>
+                <label htmlFor="rememberPassword">Lembrar senha</label>
               </div>
               <a href="#" className="forgot-password">Esqueci minha senha</a>
             </div>
@@ -107,7 +106,7 @@ const Login: React.FC = () => {
             </button>
 
             <div className="register-option">
-              <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
+              <p>Não tem uma conta? <a href="/cadastro">Cadastre-se</a></p>
             </div>
           </form>
         </div>
