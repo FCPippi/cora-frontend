@@ -8,7 +8,7 @@ type Props = {
 export default function ModuleThumb({ thumbnail, setThumbnail }: Props) {
   return (
     <div className="thumb">
-      <label className="thumb-title">Thumbnail:</label>
+      <label className="thumb-title">THUMBNAIL:</label>
       <FileUpload
         onChange={(e) => {
           if (e.target.files && e.target.files.length > 0) {

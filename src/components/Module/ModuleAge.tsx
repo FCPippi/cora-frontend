@@ -12,7 +12,7 @@ export default function ModuleAge({ ageGroups, setAgeGroups }: Props) {
 
   return (
     <div className="age-box">
-      <label className="title-age-group">Faixa etária:</label>
+      <label className="title-age-group">FAIXA ETÁRIA:</label>
       <div className="checkboxes">
         {(Object.keys(ageGroups) as AgeGroup[]).map((age) => (
           <label className="label-age-group" key={age}>

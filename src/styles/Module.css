@@ -12,12 +12,12 @@ body {
   text-align: center;
   font-size: 28px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  background: #D9D9D9;
+  background: #D9D9D959;
   max-width: 700px;
   margin: 20px auto;
   padding: 20px;
   border-radius: 12px;
-  position: relative;
+  position: relative;;
   /* referência pro coração */
 }
 
@@ -33,12 +33,12 @@ body {
   text-align: center;
   font-family: "Cherry Bomb One", cursive;
   color: #ED67A3;
-  font-size: 20px;
+  font-size: 36px;
   text-shadow:
-    -1px -1px 0 #fff,
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff,
-    1px 1px 0 #fff;
+    -2px -2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff,
+    2px 2px 0 #fff;
 
   border: none;
   outline: none;
@@ -50,10 +50,10 @@ body {
   color: #ED67A3;
   font-size: 24px;
   text-shadow:
-    -1px -1px 0 #fff,
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff,
-    1px 1px 0 #fff;
+    -2px -2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff,
+    2px 2px 0 #fff;
 }
 
 .input,
@@ -74,20 +74,20 @@ body {
 .age-box {
   display: flex;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  background: #D9D9D9;
+  background: #D9D9D959;
   max-width: 700px;
   margin: 20px auto;
   padding: 20px;
   border-radius: 12px;
   gap: 20px;
-  align-items: baseline;
+  align-items: center;
 }
 
 .checkboxes {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  font-weight: bold;
+  font-weight: regular;
   font-family: "Cherry Bomb One";
   color: #777777;
   font-size: 17px;
@@ -119,11 +119,12 @@ body {
   content: "";
   width: 6px;
   height: 10px;
-  border: solid #ccc;
+  border: solid #ffffff;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
   opacity: 0;
   transition: opacity 0.2s;
+  margin-bottom: 20%;
 }
 
 .checkbox-age-group:checked+.custom-check::after {
@@ -133,7 +134,7 @@ body {
 .thumb {
   display: flex;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  background: #D9D9D9;
+  background: #D9D9D959;
   max-width: 700px;
   margin: 20px auto;
   padding: 20px;
@@ -148,16 +149,16 @@ body {
   color: #ED67A3;
   font-size: 24px;
   text-shadow:
-    -1px -1px 0 #fff,
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff,
-    1px 1px 0 #fff;
+    -2px -2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff,
+    2px 2px 0 #fff;
 }
 
 .textarea-container {
   display: flex;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  background: #D9D9D9;
+  background: #D9D9D959;
   max-width: 700px;
   margin: 20px auto;
   padding: 20px;
@@ -168,13 +169,15 @@ body {
 }
 
 .textarea {
-  background: #D9D9D9;
+  background: transparent;
   width: 100%;
-  border: 1px solid #D9D9D9;
+  border: 0px;
   border-radius: 8px;
   padding: 10px;
   margin: 10px 0;
-  font-size: 14px;
+  font-size: 20px;
+  box-sizing: border-box;
+  display: block;
 }
 
 .save-btn {
