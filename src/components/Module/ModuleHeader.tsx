@@ -1,3 +1,5 @@
+import CircleHeartIcon from "../../icons/Coração";
+
 type Props = {
   title: string;
   setTitle: (v: string) => void;
@@ -8,6 +10,16 @@ type Props = {
 export default function ModuleHeader({ title, setTitle, synopsis, setSynopsis }: Props) {
   return (
     <div className="container-title">
+      <div className="heart-icon">
+        <CircleHeartIcon
+          width={70}
+          height={70}
+          circleColor="#fff"
+          heartColor="red"
+          rotate={0}
+          direction="right"
+        />
+      </div>
       <input
         type="text"
         className="title"

@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 import Module from './components/Module/Module.tsx'
 import ViewModule from './components/ViewModule/ViewModule.tsx'
+import BaseModule from './components/Module/BaseModule.tsx'
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root') as HTMLElement).render(
         {/* Tela de módulo !!!!*/}
         <Route path="/create-module" element={<Module />} />
         <Route path="/module" element={<ViewModule />} />
+        <Route path="/base-module" element={<BaseModule />} />
 
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

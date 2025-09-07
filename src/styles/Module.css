@@ -17,6 +17,16 @@ body {
   margin: 20px auto;
   padding: 20px;
   border-radius: 12px;
+  position: relative;
+  /* referência pro coração */
+}
+
+.heart-icon {
+  position: absolute;
+  top: -13%;
+  left: -4%;
+  margin: 0;
+  /* remove o margin antigo */
 }
 
 .title {
