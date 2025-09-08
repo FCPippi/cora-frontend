@@ -4,6 +4,7 @@ import FatCircleIcon from '../icons/FatCircleIcon';
 import CircleIcon from '../icons/CircleIcon';
 import RedHeartIcon from '../icons/RedHeartIcon';
 import CircleGreenHeartIcon from '../icons/CircleGreenHeart';
+import ArrowIcon from '../icons/ArrowIcon';
 import '../styles/Cadastro.css';
 import CoraGroupImage from '../assets/CoraGroup.png';
 import Clara from '../assets/Clara.png';
@@ -15,6 +16,7 @@ const Cadastro: React.FC = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [formCompleted, setFormCompleted] = useState(false);
   
   const [userData, setUserData] = useState({
     fullName: '',
@@ -31,6 +33,12 @@ const Cadastro: React.FC = () => {
   });
   
   const [children, setChildren] = useState<Array<{fullName: string, birthDate: string}>>([]);
+
+  const removeChild = (index: number) => {
+    const updatedChildren = [...children];
+    updatedChildren.splice(index, 1);
+    setChildren(updatedChildren);
+  };
 
   const validatePhone = (phone: string): string => {
     const numbersOnly = phone.replace(/\D/g, '');
@@ -74,10 +82,12 @@ const Cadastro: React.FC = () => {
 
   const handleUserDataChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setUserData(prevState => ({
-      ...prevState,
+    const updatedUserData = {
+      ...userData,
       [name]: value
-    }));
+    };
+    
+    setUserData(updatedUserData);
 
     let errorMessage = '';
     switch (name) {
@@ -91,17 +101,31 @@ const Cadastro: React.FC = () => {
         errorMessage = validatePassword(value);
         break;
       case 'confirmPassword':
-        errorMessage = validateConfirmPassword(userData.password, value);
+        errorMessage = validateConfirmPassword(updatedUserData.password, value);
         break;
       case 'birthDate':
         errorMessage = validateDate(value);
         break;
     }
     
-    setErrors(prev => ({
-      ...prev,
+    const newErrors = {
+      ...errors,
       [name]: errorMessage
-    }));
+    };
+    setErrors(newErrors);
+    
+    const allFieldsFilled = Boolean(
+      updatedUserData.fullName && 
+      updatedUserData.phone && 
+      updatedUserData.email && 
+      updatedUserData.birthDate && 
+      updatedUserData.password && 
+      updatedUserData.confirmPassword
+    );
+
+    const hasNoErrors = Object.values(newErrors).every(error => !error);
+    
+    setFormCompleted(allFieldsFilled && hasNoErrors);
   };
   
   const handleChildDataChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -153,7 +177,6 @@ const Cadastro: React.FC = () => {
 
   const finalizarCadastro = () => {
     if (children.length > 0 || (childData.fullName || childData.birthDate)) {
-      // Adicionar criança atual se estiver com dados preenchidos
       let allChildren = [...children];
       if (childData.fullName || childData.birthDate) {
         const newErrors: Record<string, string> = {};
@@ -214,7 +237,7 @@ const Cadastro: React.FC = () => {
     <div className="cadastro-container">
       <div className="top-bar">
         <button className="voltar-button" onClick={handleVoltar}>
-          <span className="voltar-icon">◄</span> Voltar
+          <ArrowIcon className="voltar-icon" color="#FFFFFF" circleColor="transparent" /> Voltar
         </button>
       </div>
 
@@ -367,7 +390,10 @@ const Cadastro: React.FC = () => {
                 {errors.confirmPassword && <span className="error-message">{errors.confirmPassword}</span>}
               </div>
 
-              <button type="submit" className="confirmar-button">
+              <button 
+                type="submit" 
+                className={`confirmar-button ${formCompleted ? 'completed' : ''}`}
+              >
                 Próximo
               </button>
             </form>
@@ -376,9 +402,9 @@ const Cadastro: React.FC = () => {
       ) : (
         <div className="cadastro-content child-info">
           <div className="child-background">
+            <img src={Vitor} alt="Vitor" className="child-avatar vitor" />
             <img src={Clara} alt="Clara" className="child-avatar clara" />
             <img src={Rafa} alt="Rafa" className="child-avatar rafa" />
-            <img src={Vitor} alt="Vitor" className="child-avatar vitor" />
             <img src={Cora} alt="Cora" className="child-avatar cora" />
           </div>
           
@@ -416,10 +442,20 @@ const Cadastro: React.FC = () => {
               {children.length > 0 && (
                 <div className="registered-children">
                   <h3>Crianças cadastradas: {children.length}</h3>
-                  <ul>
+                  <ul className="children-list">
                     {children.map((child, index) => (
-                      <li key={index}>
-                        {child.fullName} - {child.birthDate && new Date(child.birthDate).toLocaleDateString()}
+                      <li key={index} className="child-item">
+                        <span className="child-info">
+                          {child.fullName} - {child.birthDate && new Date(child.birthDate).toLocaleDateString()}
+                        </span>
+                        <button 
+                          type="button"
+                          className="remove-child-button"
+                          onClick={() => removeChild(index)}
+                          aria-label="Remover criança"
+                        >
+                          ✕
+                        </button>
                       </li>
                     ))}
                   </ul>
