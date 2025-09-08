@@ -1,4 +1,5 @@
 import { Navbar } from "./components/Navbar/Navbar"
+import { Categories } from "./components/Categories/Categories"
 import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
@@ -26,7 +27,7 @@ function App() {
         
         <Route element={<Layout />}>
           <Route path="/conta" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página da Conta</div>} />
-          <Route path="/conteudos" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página de Conteúdos</div>} />
+          <Route path="/conteudos" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página de Conteúdos <Categories/></div>} />
           <Route path="/forum" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página do Fórum</div>} />
           <Route path="/especialistas" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página dos Especialistas</div>} />
         </Route>
