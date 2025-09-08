@@ -14,8 +14,8 @@ const rotationMap: Record<NonNullable<ArrowBackIconProps["direction"]>, number> 
 };
 
 const ArrowIcon = ({
-  color = "#76BCD7",
-  circleColor = "#FFFFFF",
+  color = "#FFFFFF",
+  circleColor = "transparent",
   direction = "back",
   ...props
 }: ArrowBackIconProps) => {
@@ -36,7 +36,7 @@ const ArrowIcon = ({
         d="M14.5 16.5L9.5 12L14.5 7.5"
         fill="none"
         stroke={color}
-        strokeWidth="2"
+        strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
         transform={`rotate(${rotation} 12 12)`}

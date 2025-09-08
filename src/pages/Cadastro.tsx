@@ -236,7 +236,7 @@ const Cadastro: React.FC = () => {
     <div className="cadastro-container">
       <div className="top-bar">
         <button className="voltar-button" onClick={handleVoltar}>
-          <ArrowIcon className="voltar-icon" color="#FFFFFF" circleColor="transparent" /> Voltar
+          <ArrowIcon className="voltar-icon" color="#FDC647" circleColor="#FFFFFF" /> Voltar
         </button>
       </div>
 
