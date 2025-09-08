@@ -1,64 +1,135 @@
-.Card{
+.Card {
     display: flex;
     align-items: flex-start;
     background-color: rgb(217, 217, 217);
-    border-radius: 16px;
-    gap: 25px;
-    width: 602px;
-    height: 201px;
+    border-radius: 1.6rem;
+    gap: 2.5rem;
+    width: 100%;
+    max-width: 60.2rem;
+    height: auto;
+    min-height: 20.1rem;
     overflow: hidden;
-    
 }
 
-
-
-.Card-content{
+.Card-content {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-
-    
+    flex: 1;
+    padding: 1rem;
 }
 
-.Card-content h2{
+.Card-content h2 {
     font-family: "Cherry Bomb One";
     color: rgb(237, 103, 163);
-    -webkit-text-stroke: 1.5px rgb(255,245,225);
-    width: 150px;
-    margin-top: 10px;
-    margin-left: 10px;
-    font-size: 20px;
-
-    
+    -webkit-text-stroke: 0.15rem rgb(255,245,225);
+    width: 100%;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-size: 2rem;
 }
 
-.Card-content p{
+.Card-content p {
     color: rgb(119,119,119);
     font-family: "Alexandria";
-    margin-top: 10px;
-    font-size:11px;
-    margin-bottom: 25px;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
 }
-
 
 .AgeRange {
-  font-weight: bold;
-  font-family: "Cherry Bomb One";
-  color: rgb(119, 119, 119);
-  font-size: 20px;
-  width: 200px;
-  margin-top: 15px;
-  margin-right: 20px;
+    font-weight: bold;
+    font-family: "Cherry Bomb One";
+    color: rgb(119, 119, 119);
+    font-size: 2rem;
+    width: 20rem;
+    margin-top: 1.5rem;
 }
 
+@media (max-width: 768px) {
+    .Card {
+        flex-direction: column;
+        gap: 1.5rem;
+        max-width: 100%;
+    }
+    
+    .Card-content h2 {
+        margin-left: 0;
+    }
+}
 
+@media (max-width: 576px) {
+    .Card {
+        border-radius: 1.2rem;
+        gap: 1rem;
+    }
+    
+    .Card-content h2 {
+        font-size: 1.8rem;
+        -webkit-text-stroke: 0.1rem rgb(255,245,225);
+    }
+    
+    .AgeRange {
+        font-size: 1.8rem;
+        width: auto;
+        margin-right: 2rem;
+    }
+}
 
-.Card-image img{
-    width: 180px;
-    height: 190px;
-    margin-left: 1px;
+.Card-image img {
+    width: 18rem;
+    height: 19rem;
+    margin-left: 0.1rem;
     object-fit: cover;
     display: block;
-    border: 5px solid rgb(237, 103, 163);;
-    border-radius: 10px;
+    border: 0.5rem solid rgb(237, 103, 163);
+    border-radius: 1rem;
+}
+
+@media (max-width: 768px) {
+    .Card {
+        flex-direction: column;
+        max-width: 100%;
+        gap: 1.5rem;
+    }
+
+    .Card-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .Card-image img {
+        width: 70%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .Card-content {
+        padding: 1.5rem;
+    }
+
+    .Card-content h2 {
+        margin-left: 0;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .Card-image img {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .Card-content p {
+        font-size: 1.4rem;
+    }
+
+    .AgeRange {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+    }
 }

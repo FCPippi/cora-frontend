@@ -1,13 +1,20 @@
 
 import type { SVGProps } from "react";
 
-const CoraLogoIcon = (props: SVGProps<SVGSVGElement>) => (
+interface CoraLogoIconProps extends SVGProps<SVGSVGElement> {
+  width?: string | number;
+  height?: string | number;
+}
+
+const CoraLogoIcon = ({ width = "9.8rem", height = "10.1rem", ...props }: CoraLogoIconProps) => (
   <svg
-    width="98"
-    height="101"
+    width="100%"
+    height="100%"
     viewBox="0 0 98 101"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    style={{ maxWidth: width, maxHeight: height }}
+    preserveAspectRatio="xMidYMid meet"
     {...props}
   >
     <path

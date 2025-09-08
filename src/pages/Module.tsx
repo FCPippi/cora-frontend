@@ -76,10 +76,10 @@ export default function Module() {
         </button>
       </div>
       <div className="background-elements">
-        <FatCircleIcon className="bg-circle top-left" color="#7ABBD7" width={400} height={400} />
-        <CircleIcon className="bg-circle top-right" color="#FDC647" width={300} height={300} />
-        <RedHeartIcon className="bg-heart bottom-left" color="#DF3841" width={350} height={350} />
-        <CircleGreenHeartIcon className="bg-circle bottom-right" color="#61BC55" width={350} height={350} />
+        <FatCircleIcon className="bg-circle top-left" color="#7ABBD7" width="40rem" height="40rem" />
+        <CircleIcon className="bg-circle top-right" color="#FDC647" width="30rem" height="30rem" />
+        <RedHeartIcon className="bg-heart bottom-left" color="#DF3841" width="35rem" height="35rem" />
+        <CircleGreenHeartIcon className="bg-circle bottom-right" color="#61BC55" width="35rem" height="35rem" />
       </div>
 
       <div className="content-section">
@@ -108,7 +108,7 @@ export default function Module() {
         ))}
 
         <IconButton className="plus-btn" onClick={handleAddContent}>
-          <PlusIcon color="#76BCD7" width={30} height={30} />
+          <PlusIcon color="#76BCD7" width="3rem" height="3rem" />
         </IconButton>
 
         <button className="save-btn" onClick={handleSave}>

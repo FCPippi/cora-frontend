@@ -1,8 +1,8 @@
 import type { SVGProps } from "react";
 
 interface CircleHeartIconProps extends SVGProps<SVGSVGElement> {
-  width?: number;
-  height?: number;
+  width?: string | number;
+  height?: string | number;
   circleColor?: string;
   heartColor?: string;
   rotate?: number; // ângulo em graus
@@ -10,8 +10,8 @@ interface CircleHeartIconProps extends SVGProps<SVGSVGElement> {
 }
 
 const CircleHeartIcon = ({
-  width = 111,
-  height = 107,
+  width = "11.1rem",
+  height = "10.7rem",
   circleColor = "white",
   heartColor = "#DF3841",
   direction = "left",
@@ -23,11 +23,13 @@ const CircleHeartIcon = ({
 
   return (
     <svg
-      width={width}
-      height={height}
+      width="100%"
+      height="100%"
       viewBox="0 0 111 107"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      style={{ maxWidth: width, maxHeight: height }}
+      preserveAspectRatio="xMidYMid meet"
       {...props}
     >
       <path

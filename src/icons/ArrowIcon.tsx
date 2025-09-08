@@ -4,6 +4,8 @@ interface ArrowBackIconProps extends SVGProps<SVGSVGElement> {
   color?: string;
   circleColor?: string;
   direction?: "back" | "right" | "up" | "down";
+  width?: string | number;
+  height?: string | number;
 }
 
 const rotationMap: Record<NonNullable<ArrowBackIconProps["direction"]>, number> = {
@@ -17,16 +19,20 @@ const ArrowIcon = ({
   color = "#FFFFFF",
   circleColor = "transparent",
   direction = "back",
+  width = "2.4rem",
+  height = "2.4rem",
   ...props
 }: ArrowBackIconProps) => {
   const rotation = rotationMap[direction];
 
   return (
     <svg
-      width="24"
-      height="24"
+      width="100%"
+      height="100%"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
+      style={{ maxWidth: width, maxHeight: height }}
+      preserveAspectRatio="xMidYMid meet"
       {...props}
     >
 

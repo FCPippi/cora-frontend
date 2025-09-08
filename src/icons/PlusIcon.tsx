@@ -3,19 +3,28 @@ import type { SVGProps } from "react";
 interface PlusIconProps extends SVGProps<SVGSVGElement> {
   color?: string;
   circleColor?: string;
-  width?: number;
-  height?: number;
+  width?: string | number;
+  height?: string | number;
 }
 
 const PlusIcon = ({
   color = "#76BCD7",
   circleColor = "#FFFFFF",
-  width = 296,
-  height = 255,
+  width = "3rem",
+  height = "3rem",
   ...props
 }: PlusIconProps) => {
   return (
-    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" {...props}>
+    <svg 
+      width="100%" 
+      height="100%" 
+      viewBox="0 0 30 30" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg" 
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      style={{ maxWidth: width, maxHeight: height }}
+      preserveAspectRatio="xMidYMid meet"
+      {...props}>
     <rect width="30" height="30" fill="url(#pattern0_1348_405)"/>
     <defs>
     <pattern id="pattern0_1348_405" patternContentUnits="objectBoundingBox" width="1" height="1">

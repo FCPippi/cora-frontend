@@ -29,16 +29,17 @@ const Login: React.FC = () => {
   return (
     <div className="login-container">
       <div className="background-elements">
-        <FatCircleIcon className="bg-circle top-left" color="#7ABBD7" width={400} height={400} />
-        <CircleIcon className="bg-circle top-right" color="#FDC647" width={300} height={300} />
-        <RedHeartIcon className="bg-heart red-heart bottom-left" color="#DF3841" width={350} height={350} />
-        <CircleGreenHeartIcon className="bg-circle bottom-right" color="#61BC55" width={350} height={350} />
+        <FatCircleIcon className="bg-circle top-left" color="#7ABBD7" width="40rem" height="40rem" />
+        <CircleIcon className="bg-circle top-right" color="#FDC647" width="30rem" height="30rem" />
+        <RedHeartIcon className="bg-heart red-heart bottom-left" color="#DF3841" width="35rem" height="35rem" />
+        <CircleGreenHeartIcon className="bg-circle bottom-right" color="#61BC55" width="35rem" height="35rem" />
       </div>
 
       <div className="login-content">
         <div className="logo-section">
           <div className="logo">
-            <CoraLogoIcon width={300} height={300} />
+            <CoraLogoIcon width="30rem" height="30rem" className="desktop-logo" />
+            <CoraLogoIcon width="20rem" height="20rem" className="mobile-logo" />
           </div>
         </div>
 
@@ -80,7 +81,7 @@ const Login: React.FC = () => {
                   onClick={togglePassword}
                   aria-label={showPassword ? "Esconder senha" : "Mostrar senha"}
                 >
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem">
                     <path d="M12 5.25C7.5 5.25 3.75 8.25 2.25 12C3.75 15.75 7.5 18.75 12 18.75C16.5 18.75 20.25 15.75 21.75 12C20.25 8.25 16.5 5.25 12 5.25Z" stroke="#888" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M12 15.75C14.0711 15.75 15.75 14.0711 15.75 12C15.75 9.92893 14.0711 8.25 12 8.25C9.92893 8.25 8.25 9.92893 8.25 12C8.25 14.0711 9.92893 15.75 12 15.75Z" stroke="#888" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>

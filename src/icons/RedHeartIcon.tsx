@@ -3,24 +3,26 @@ import type { SVGProps } from "react";
 interface RedHeartIconProps extends SVGProps<SVGSVGElement> {
   color?: string;
   circleColor?: string;
-  width?: number;
-  height?: number;
+  width?: string | number;
+  height?: string | number;
 }
 
 const RedHeartIcon = ({
   color = "#76BCD7",
   circleColor = "#FFFFFF",
-  width = 296,
-  height = 255,
+  width = "29.6rem",
+  height = "25.5rem",
   ...props
 }: RedHeartIconProps) => {
   return (
     <svg
-      width={width}
-      height={height}
+      width="100%"
+      height="100%"
       viewBox="0 0 296 255"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      style={{ maxWidth: width, maxHeight: height }}
+      preserveAspectRatio="xMidYMid meet"
       {...props}
     >
       <path

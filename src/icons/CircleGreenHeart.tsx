@@ -5,13 +5,13 @@ interface CircleGreenHeartIconProps extends SVGProps<SVGSVGElement> {
   circleColor?: string;
   rotate?: number; // ângulo em graus
   direction?: "left" | "right"; // nova prop
-  width?: number;
-  height?: number;
+  width?: string | number;
+  height?: string | number;
 }
 
 const CircleGreenHeartIcon = ({
-  width = 415,
-  height = 415,
+  width = "41.5rem",
+  height = "41.5rem",
   color = "#76BCD7",
   circleColor = "#FFFFFF",
   direction = "left",
@@ -24,11 +24,13 @@ const CircleGreenHeartIcon = ({
 
   return (
     <svg
-      width={width}
-      height={height}
+      width="100%"
+      height="100%"
       viewBox="0 0 415 415"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      style={{ maxWidth: width, maxHeight: height }}
+      preserveAspectRatio="xMidYMid meet"
       {...props}
     >
       <circle

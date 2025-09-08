@@ -8,16 +8,18 @@ interface SearchIconProps extends SVGProps<SVGSVGElement> {
 
 const SearchIcon = ({
   color = "#777777",
-  width = 29,
-  height = 24,
+  width = "2.9rem",
+  height = "2.4rem",
   ...props
 }: SearchIconProps) => (
   <svg
-    width={width}
-    height={height}
+    width="100%"
+    height="100%"
     viewBox="0 0 29 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    style={{ maxWidth: width, maxHeight: height }}
+    preserveAspectRatio="xMidYMid meet"
     {...props}
   >
     <path

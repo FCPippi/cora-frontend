@@ -5,13 +5,13 @@
 .custom-button {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.8rem;
   background-color: transparent;
   color: #fff;
-  padding: 8px 12px;
-  border-radius: 6px;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.6rem;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 1.4rem;
   transition: background-color 0.2s;
 }
 
@@ -27,4 +27,11 @@
 .custom-button:hover svg {
   opacity: 0.3;
   color: #fff;
+}
+
+@media (max-width: 576px) {
+  .custom-button {
+    padding: 0.6rem 1rem;
+    font-size: 1.3rem;
+  }
 }

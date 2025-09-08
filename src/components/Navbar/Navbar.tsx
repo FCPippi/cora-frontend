@@ -37,7 +37,7 @@ export const Navbar: React.FC = () => {
                   textTransform: "none", 
                   fontWeight: location.pathname === item.path ? "bold" : "normal",
                   borderBottom: location.pathname === item.path ? "2px solid #fff" : "none",
-                  padding: "10px 5px",
+                  padding: "1rem 0.5rem",
                   fontSize: "16px",
                   fontFamily: "'Alexandria', sans-serif",
                   borderRadius: 0,

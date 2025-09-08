@@ -2,23 +2,25 @@ import type { SVGProps } from "react";
 
 interface CircleIconProps extends SVGProps<SVGSVGElement> {
   color?: string;
-  width?: number;
-  height?: number;
+  width?: string | number;
+  height?: string | number;
 }
 
 const CircleIcon = ({
-  width = 409,
-  height = 409,
+  width = "40.9rem",
+  height = "40.9rem",
   color = "#FDC647",
   ...props
 }: CircleIconProps) => {
   return (
     <svg
-      width={width}
-      height={height}
+      width="100%"
+      height="100%"
       viewBox="0 0 409 409"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      style={{ maxWidth: width, maxHeight: height }}
+      preserveAspectRatio="xMidYMid meet"
       {...props}
     >
       <circle

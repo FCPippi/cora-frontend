@@ -297,9 +297,73 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px;
+  height: 6rem;
   background-color: #76BCD7;
   z-index: 100;
   display: flex;
   align-items: center;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .content-section {
+    width: 100%;
+    margin-top: 7rem;
+  }
+  
+  .title {
+    font-size: 2.8rem;
+  }
+  
+  .textarea {
+    font-size: 1.4rem;
+  }
+  
+  .bg-circle.top-left {
+    width: 25rem;
+    height: 25rem;
+  }
+  
+  .bg-circle.top-right {
+    width: 20rem;
+    height: 20rem;
+  }
+  
+  .bg-heart.bottom-left {
+    width: 22rem;
+    height: 22rem;
+  }
+  
+  .bg-circle.bottom-right {
+    width: 22rem;
+    height: 22rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .content-section {
+    margin-top: 6rem;
+  }
+  
+  .title {
+    font-size: 2.4rem;
+  }
+  
+  .textarea {
+    font-size: 1.2rem;
+  }
+  
+  .heart-icon {
+    top: -8%;
+    left: -2%;
+  }
+  
+  .plus-btn {
+    bottom: 2rem;
+    right: 2rem;
+  }
 }

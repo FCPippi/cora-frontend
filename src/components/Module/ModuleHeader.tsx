@@ -13,8 +13,8 @@ export default function ModuleHeader({ title, setTitle, synopsis, setSynopsis }:
     <div className="container-title">
       <div className="heart-icon">
         <CircleHeartIcon
-          width={70}
-          height={70}
+          width="7rem"
+          height="7rem"
           circleColor="#fff"
           heartColor="red"
           rotate={0}

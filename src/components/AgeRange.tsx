@@ -25,8 +25,8 @@ function AgeRange() {
 
       <Link to="/module">
         <button style={{
-          padding: "10px 20px",
-          fontSize: "16px",
+          padding: "1rem 2rem",
+          fontSize: "1.6rem",
           background: "#03a9f4",
           color: "#fff",
           border: "none",
