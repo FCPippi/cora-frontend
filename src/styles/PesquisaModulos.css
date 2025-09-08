@@ -1,0 +1,33 @@
+.pesquisa-navitem.active {
+  background: #e3f7ff;
+  color: #3a8dad;
+}
+
+.pesquisa-content {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1.5rem 0.5rem;
+}
+
+.pesquisa-title {
+  font-size: 1.1rem;
+  color: #777;
+  margin-bottom: 0.5rem;
+}
+
+.pesquisa-searchbar {
+  margin-bottom: 1.5rem;
+}
+
+.pesquisa-modules {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .pesquisa-content {
+    max-width: 100%;
+    padding: 1rem 0.2rem;
+  }
+}
