@@ -171,7 +171,6 @@ const Cadastro: React.FC = () => {
         delete newErrors.childDateError;
         return newErrors;
       });
-      alert('Criança adicionada com sucesso!');
     }
   };
 
