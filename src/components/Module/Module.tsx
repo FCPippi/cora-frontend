@@ -6,7 +6,7 @@ import ModuleText from "./ModuleText";
 import "../../styles/Module.css";
 
 export default function Module() {
-  const [title, setTitle] = useState("TÍTULO DO CARD");
+  const [title, setTitle] = useState("TÍTULO");
   const [synopsis, setSynopsis] = useState("");
   const [thumbnail, setThumbnail] = useState<File | null>(null);
   const [text, setText] = useState("");
