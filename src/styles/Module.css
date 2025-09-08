@@ -25,6 +25,7 @@ body {
 }
 
 .content-section {
+  margin-top: 60px;
   width: 1000px;
   flex: 1;
   padding: 20px;
@@ -89,7 +90,7 @@ body {
   font-size: 14px;
 }
 
-.textarea {
+.textarea:not([readonly]) {
   min-height: 120px;
   resize: vertical;
 }
@@ -264,4 +265,40 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.voltar-button {
+  position: relative;
+  margin-left: 15px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 101;
+  font-family: 'Alexandria', sans-serif;
+  font-weight: 500;
+  gap: 4px;
+}
+
+.voltar-icon {
+  margin-right: 5px;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #76BCD7;
+  z-index: 100;
+  display: flex;
+  align-items: center;
 }

@@ -1,24 +1,29 @@
 import { useState } from "react";
 
-import ModuleHeader from "./ModuleHeader";
-import ModuleAge from "./ModuleAge";
-import ModuleThumb from "./ModuleThumb";
-import ModuleText from "./ModuleText";
+import ModuleHeader from "../components/Module/ModuleHeader";
+import ModuleAge from "../components/Module/ModuleAge";
+import ModuleThumb from "../components/Module/ModuleThumb";
+import ModuleText from "../components/Module/ModuleText";
 
-import "../../styles/Module.css";
+import "../styles/Module.css";
 
-import FatCircleIcon from "../../icons/FatCircleIcon";
-import CircleIcon from "../../icons/CircleIcon";
-import RedHeartIcon from "../../icons/RedHeartIcon";
-import CircleGreenHeartIcon from "../../icons/CircleGreenHeart";
-import PlusIcon from "../../icons/PlusIcon";
+import FatCircleIcon from "../icons/FatCircleIcon";
+import CircleIcon from "../icons/CircleIcon";
+import RedHeartIcon from "../icons/RedHeartIcon";
+import CircleGreenHeartIcon from "../icons/CircleGreenHeart";
+import PlusIcon from "../icons/PlusIcon";
 
 import { IconButton } from "@mui/material";
+import ArrowIcon from "../icons/ArrowIcon";
+import { useNavigate } from "react-router-dom";
 
 export default function Module() {
+  const navigate = useNavigate();
   const [title, setTitle] = useState("TÍTULO");
   const [synopsis, setSynopsis] = useState("");
   const [thumbnail, setThumbnail] = useState<File | null>(null);
+  const [step, setStep] = useState(1);
+  
 
   const [ageGroups, setAgeGroups] = useState({
     "até 3 anos": false,
@@ -27,21 +32,17 @@ export default function Module() {
     "13 a 17 anos": false,
   });
 
-  // Estado de conteúdos (array de textos)
   const [contents, setContents] = useState([{ id_content: Date.now(), text: "" }]);
 
-  // Adicionar novo conteúdo
   const handleAddContent = () => {
     setContents([...contents, { id_content: Date.now(), text: "" }]);
   };
 
-  // Remover conteúdo
   const handleRemoveContent = (id_content: number) => {
     const updatedContents = contents.filter(content => content.id_content !== id_content);
     setContents(updatedContents);
   };
 
-  // Salvar módulo
   const handleSave = () => {
     const moduleWithContents = {
       id_module: null,
@@ -59,8 +60,21 @@ export default function Module() {
     alert("Módulo salvo! Veja o console para detalhes.");
   };
 
+  const handleVoltar = () => {
+    if (step === 2) {
+      setStep(1);
+    } else {
+      navigate('/conteudos');
+    }
+  };
+
   return (
     <div className="container">
+      <div className="top-bar">
+        <button className="voltar-button" onClick={handleVoltar}>
+          <ArrowIcon className="voltar-icon" color="#FFFFFF" circleColor="transparent" /> Voltar
+        </button>
+      </div>
       <div className="background-elements">
         <FatCircleIcon className="bg-circle top-left" color="#7ABBD7" width={400} height={400} />
         <CircleIcon className="bg-circle top-right" color="#FDC647" width={300} height={300} />
@@ -73,7 +87,6 @@ export default function Module() {
         <ModuleAge ageGroups={ageGroups} setAgeGroups={setAgeGroups} />
         <ModuleThumb thumbnail={thumbnail} setThumbnail={setThumbnail} />
 
-        {/* Renderiza cada ModuleText com botão de remover */}
         {contents.map((content, index) => (
           <div key={content.id_content} style={{ position: "relative", marginBottom: "16px" }}>
             <ModuleText
@@ -94,7 +107,6 @@ export default function Module() {
           </div>
         ))}
 
-        {/* Botão para adicionar novo ModuleText */}
         <IconButton className="plus-btn" onClick={handleAddContent}>
           <PlusIcon color="#76BCD7" width={30} height={30} />
         </IconButton>

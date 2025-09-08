@@ -2,7 +2,8 @@ import { Navbar } from "./components/Navbar/Navbar"
 import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
-import Module from "./components/Module/Module";
+import Module from "./pages/Module";
+import ViewModule from "./pages/ViewModule";
 
 const Layout = () => {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/criar-modulo" element={<Module />} />
+        <Route path="/modulo" element={<ViewModule />} />
         
         <Route element={<Layout />}>
           <Route path="/conta" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página da Conta</div>} />

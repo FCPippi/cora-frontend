@@ -3,6 +3,7 @@ import FileUpload from "./FileUpload";
 type Props = {
   thumbnail: File | null;
   setThumbnail: (file: File | null) => void;
+  readOnly?: boolean; 
 };
 
 export default function ModuleThumb({ thumbnail, setThumbnail }: Props) {

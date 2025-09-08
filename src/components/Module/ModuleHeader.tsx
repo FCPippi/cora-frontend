@@ -5,6 +5,7 @@ type Props = {
   setTitle: (v: string) => void;
   synopsis: string;
   setSynopsis: (v: string) => void;
+  readOnly?: boolean; 
 };
 
 export default function ModuleHeader({ title, setTitle, synopsis, setSynopsis }: Props) {
