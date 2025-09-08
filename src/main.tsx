@@ -1,25 +1,15 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import { theme } from "./theme";
+import "./index.css";
 
-import Module from './components/Module/Module.tsx'
-import ViewModule from './components/ViewModule/ViewModule.tsx'
-import BaseModule from './components/Module/BaseModule.tsx'
-
-createRoot(document.getElementById('root') as HTMLElement).render(
-  <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-
-        {/* Tela de módulo !!!!*/}
-        <Route path="/create-module" element={<Module />} />
-        <Route path="/module" element={<ViewModule />} />
-        <Route path="/base-module" element={<BaseModule />} />
-
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </BrowserRouter>
-  </StrictMode>,
-)
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  <React.StrictMode>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
+  </React.StrictMode>
+);
