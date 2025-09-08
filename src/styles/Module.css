@@ -67,6 +67,7 @@ body {
   border: none;
   outline: none;
   background: transparent;
+  text-transform: uppercase;
 }
 
 .title-age-group {
