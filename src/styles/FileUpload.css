@@ -1,0 +1,30 @@
+.import-button {
+  display: none;
+}
+
+.custom-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.custom-button svg {
+  display: block;
+  transition: opacity 0.2s;
+}
+
+.custom-button:hover {
+  background-color: #555555;
+}
+
+.custom-button:hover svg {
+  opacity: 0.3;
+  color: #fff;
+}
