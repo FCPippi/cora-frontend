@@ -27,6 +27,7 @@ export default function ModuleAge({ ageGroups, setAgeGroups }: Props) {
           </label>
         ))}
       </div>
+      <div></div>
     </div>
   );
 }

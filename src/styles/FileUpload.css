@@ -17,8 +17,14 @@
 
 .custom-button svg {
   display: block;
+  transition: opacity 0.2s;
 }
 
 .custom-button:hover {
   background-color: #555555;
+}
+
+.custom-button:hover svg {
+  opacity: 0.3;
+  color: #fff;
 }
