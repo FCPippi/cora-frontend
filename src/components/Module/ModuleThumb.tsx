@@ -1,4 +1,4 @@
-import FileUpload from "../FileUpload";
+import FileUpload from "./FileUpload";
 
 type Props = {
   thumbnail: File | null;
