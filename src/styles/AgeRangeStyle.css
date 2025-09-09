@@ -19,17 +19,39 @@
     font-size: 2.4rem;
     text-align: center;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
-    width: 17.5rem; 
-    margin-bottom: 0.5px;
+    padding: 0.3rem 0;
+}
+
+.age-text {
+    color: #777777;
+    font-family: "Alexandria", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.checkbox-container {
+    position: relative;
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    pointer-events: none;
 }
 
 .checkbox {
     appearance: none;
     -webkit-appearance: none;
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 1.5rem;
+    height: 1.5rem;
     cursor: pointer;
     position: relative;
     border: 0.3rem solid rgb(119,119,119);
@@ -43,21 +65,35 @@
 }
 
 @media (max-width: 576px) {
-    .FaixaEtaria {
-        width: 18rem;
-        padding: 1.2rem;
-        border-width: 0.8rem;
+    .age-range-container {
+        width: 14rem;
+        padding: 0.8rem 1.2rem;
     }
     
-    .texto {
-        font-size: 2rem;
-        width: 15.5rem;
+    .age-text {
+        font-size: 0.9rem;
+    }
+    
+    .checkbox-container {
+        width: 1.3rem;
+        height: 1.3rem;
     }
     
     .checkbox {
-        width: 2rem;
-        height: 2rem;
-        left: 2.5rem;
+        width: 1.3rem;
+        height: 1.3rem;
+    }
+    
+    .checkmark {
+        width: 1.3rem;
+        height: 1.3rem;
+    }
+    
+    .checkbox:checked + .checkmark:after {
+        left: 0.4rem;
+        top: 0.2rem;
+        width: 0.45rem;
+        height: 0.6rem;
     }
 }
 

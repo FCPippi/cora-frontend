@@ -260,26 +260,26 @@
 }
 
 .clara {
-  top: 330px;
-  left: -700px;
+  top: 33rem;
+  left: -60rem;
   transform: rotate(90deg);
 }
 
 .rafa {
-  bottom: -150px;
-  left: 1000px;
+  bottom: -15.5rem;
+  left: 100rem;
   transform: none;
 }
 
 .vitor {
-  bottom: 650px;
-  right: 1330px;
+  bottom: 55rem;
+  right: 133rem;
   transform: none;
 }
 
 .cora {
-  top: 200px;
-  right: -630px;
+  top: 20rem;
+  right: -60rem;
   transform: rotate(-90deg);
 }
 

@@ -33,7 +33,7 @@ function App() {
         
         <Route element={<Layout />}>
           <Route path="/conta" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página da Conta</div>} />
-          <Route path="/conteudos" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página de Conteúdos</div>} />
+          <Route path="/conteudos" element={<Conteudos />} />
           <Route path="/forum" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página do Fórum</div>} />
           <Route path="/especialistas" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página dos Especialistas</div>} />
         </Route>
