@@ -2,16 +2,28 @@ import React from "react";
 import styles from "../styles/SearchBar.module.css";
 import SearchIcon from "../icons/SearchIcon";
 
-const SearchBar: React.FC = () => {
+interface SearchBarProps {
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  placeholder?: string;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({
+  value,
+  onChange,
+  placeholder = "Pesquise",
+}) => {
   return (
     <div className={styles.searchBarContainer}>
       <span className={styles.icon}>
-        <SearchIcon/>
+        <SearchIcon />
       </span>
       <input
         className={styles.input}
         type="text"
-        placeholder="Pesquise"
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
         aria-label="Pesquisar"
       />
     </div>

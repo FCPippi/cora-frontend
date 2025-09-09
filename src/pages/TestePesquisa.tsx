@@ -51,7 +51,7 @@ const mockModules = [
   },
 ];
 
-function PesquisaModulos() {
+function TestePesquisa() {
   const [search, setSearch] = useState("");
 
   const filteredModules = mockModules.filter(
@@ -107,4 +107,4 @@ function PesquisaModulos() {
   );
 }
 
-export default PesquisaModulos;
+export default TestePesquisa;

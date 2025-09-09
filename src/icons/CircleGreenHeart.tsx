@@ -12,8 +12,6 @@ interface CircleGreenHeartIconProps extends SVGProps<SVGSVGElement> {
 const CircleGreenHeartIcon = ({
   width = "41.5rem",
   height = "41.5rem",
-  color = "#76BCD7",
-  circleColor = "#FFFFFF",
   direction = "left",
   ...props
 }: CircleGreenHeartIconProps) => {

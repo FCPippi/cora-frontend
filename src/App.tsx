@@ -1,10 +1,20 @@
-import { Navbar } from "./components/Navbar/Navbar"
-import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
+import { Navbar } from "./components/Navbar/Navbar";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Outlet,
+} from "react-router-dom";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Module from "./pages/Module";
 import ViewModule from "./pages/ViewModule";
 import PesquisaModulos from "./pages/PesquisaModulos";
+import Popup from "./components/Popup";
+import AgeRange from "./components/AgeRange";
+import CardModule from "./components/CardModule";
+import Conteudos from "./pages/Conteudos";
+import TestePesquisa from "./pages/TestePesquisa";
 
 const Layout = () => {
   return (
@@ -24,18 +34,61 @@ function App() {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/criar-modulo" element={<Module />} />
         <Route path="/modulo" element={<ViewModule />} />
-        
+        <Route path="/popup" element={<Popup />} />
+        <Route path="/faixa-etaria" element={<AgeRange />} />
+        <Route
+          path="/card-module"
+          element={
+            <CardModule
+              title={"teste"}
+              sinopsys={"teste"}
+              thumbnail={"teste"}
+              ageGroup={"teste"}
+            />
+          }
+        />
+
         <Route element={<Layout />}>
-          <Route path="/conta" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página da Conta</div>} />
-          <Route path="/conteudos" element={<PesquisaModulos />} />
-          <Route path="/forum" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página do Fórum</div>} />
-          <Route path="/especialistas" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página dos Especialistas</div>} />
+          <Route
+            path="/conta"
+            element={
+              <div style={{ padding: "2rem", textAlign: "center" }}>
+                Página da Conta
+              </div>
+            }
+          />
+          <Route path="/conteudos" element={<Conteudos />} />
+          <Route path="/pesquisa" element={<PesquisaModulos />} />
+          <Route path="/teste-pesquisa" element={<TestePesquisa />} />
+          <Route
+            path="/forum"
+            element={
+              <div style={{ padding: "2rem", textAlign: "center" }}>
+                Página do Fórum
+              </div>
+            }
+          />
+          <Route
+            path="/especialistas"
+            element={
+              <div style={{ padding: "2rem", textAlign: "center" }}>
+                Página dos Especialistas
+              </div>
+            }
+          />
         </Route>
-        
-        <Route path="*" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página não encontrada</div>} />
+
+        <Route
+          path="*"
+          element={
+            <div style={{ padding: "2rem", textAlign: "center" }}>
+              Página não encontrada
+            </div>
+          }
+        />
       </Routes>
     </Router>
   );
 }
 
-export default App
+export default App;

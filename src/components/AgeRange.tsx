@@ -1,42 +1,22 @@
 import "../styles/AgeRangeStyle.css";
-import { Link } from "react-router-dom";
-
 
 function AgeRange() {
-
   return (
-    <div className="FaixaEtaria">
-
-
-      <div className="filtro">
-        <label className="texto" htmlFor="filtro1">
-          9 - 12 anos
+    <div className="age-range-container">
+      <div className="age-range-item">
+        <span className="age-text">9-12 anos</span>
+        <div className="checkbox-container">
           <input className="checkbox" type="checkbox" id="filtro1" />
-        </label>
+          <span className="checkmark"></span>
+        </div>
       </div>
-
-
-      <div className="filtro">
-        <label className="texto" htmlFor="filtro2">
-          13 - 15 anos
+      
+      <div className="age-range-item">
+        <span className="age-text">13-15 anos</span>
+        <div className="checkbox-container">
           <input className="checkbox" type="checkbox" id="filtro2" />
-        </label>
+        </div>
       </div>
-
-      <Link to="/module">
-        <button style={{
-          padding: "1rem 2rem",
-          fontSize: "1.6rem",
-          background: "#03a9f4",
-          color: "#fff",
-          border: "none",
-          borderRadius: "8px",
-          cursor: "pointer"
-        }}>
-          Ir para o Módulo
-        </button>
-      </Link>
-
     </div>
   )
 }

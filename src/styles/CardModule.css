@@ -1,135 +1,140 @@
 .Card {
-    display: flex;
-    align-items: flex-start;
-    background-color: rgb(217, 217, 217);
-    border-radius: 1.6rem;
-    gap: 2.5rem;
-    width: 100%;
-    max-width: 60.2rem;
-    height: auto;
-    min-height: 20.1rem;
-    overflow: hidden;
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  height: 160px;
+  position: relative;
+  border: 3px solid;
+  max-width: 420px;
+}
+
+.Card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.Card-inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.Card-thumbnail {
+  width: 130px;
+  min-width: 130px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.Card-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .Card-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex: 1;
-    padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem;
+  flex: 1;
+  position: relative;
+}
+
+.Card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
 }
 
 .Card-content h2 {
-    font-family: "Cherry Bomb One";
-    color: rgb(237, 103, 163);
-    -webkit-text-stroke: 0.15rem rgb(255,245,225);
-    width: 100%;
-    margin-top: 1rem;
-    margin-left: 1rem;
-    font-size: 2rem;
-}
-
-.Card-content p {
-    color: rgb(119,119,119);
-    font-family: "Alexandria";
-    margin-top: 1rem;
-    font-size: 1.1rem;
-    margin-bottom: 2.5rem;
-    padding: 0 1rem;
+  font-family: "Cherry Bomb One", sans-serif;
+  font-size: 0.9rem;
+  font-weight: bold;
+  line-height: 1.1;
+  margin: 0;
+  flex: 1;
+  max-width: 70%;
 }
 
 .AgeRange {
-    font-weight: bold;
-    font-family: "Cherry Bomb One";
-    color: rgb(119, 119, 119);
-    font-size: 2rem;
-    width: 20rem;
-    margin-top: 1.5rem;
+  font-family: "Cherry Bomb One", sans-serif;
+  font-size: 0.7rem;
+  color: #666;
+  text-align: right;
+  line-height: 1;
+  font-weight: bold;
+  white-space: pre-line;
+  min-width: 40px;
 }
 
+.Card-content p {
+  font-family: "Alexandria", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  color: #444;
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
-    .Card {
-        flex-direction: column;
-        gap: 1.5rem;
-        max-width: 100%;
-    }
-    
-    .Card-content h2 {
-        margin-left: 0;
-    }
+  .Card {
+    height: 160px;
+  }
+
+  .Card-thumbnail {
+    width: 120px;
+    min-width: 120px;
+  }
+
+  .Card-content h2 {
+    font-size: 0.9rem;
+  }
+
+  .Card-content p {
+    font-size: 0.75rem;
+    -webkit-line-clamp: 4;
+  }
+
+  .AgeRange {
+    font-size: 0.7rem;
+  }
 }
 
-@media (max-width: 576px) {
-    .Card {
-        border-radius: 1.2rem;
-        gap: 1rem;
-    }
-    
-    .Card-content h2 {
-        font-size: 1.8rem;
-        -webkit-text-stroke: 0.1rem rgb(255,245,225);
-    }
-    
-    .AgeRange {
-        font-size: 1.8rem;
-        width: auto;
-        margin-right: 2rem;
-    }
-}
+@media (max-width: 480px) {
+  .Card {
+    height: 140px;
+  }
 
-.Card-image img {
-    width: 18rem;
-    height: 19rem;
-    margin-left: 0.1rem;
-    object-fit: cover;
-    display: block;
-    border: 0.5rem solid rgb(237, 103, 163);
-    border-radius: 1rem;
-}
+  .Card-thumbnail {
+    width: 100px;
+    min-width: 100px;
+  }
 
-@media (max-width: 768px) {
-    .Card {
-        flex-direction: column;
-        max-width: 100%;
-        gap: 1.5rem;
-    }
+  .Card-content {
+    padding: 0.75rem;
+  }
 
-    .Card-image {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
+  .Card-content h2 {
+    font-size: 0.8rem;
+    max-width: 100%;
+  }
 
-    .Card-image img {
-        width: 70%;
-        height: auto;
-        margin: 0 auto;
-    }
+  .Card-content p {
+    font-size: 0.7rem;
+    -webkit-line-clamp: 3;
+  }
 
-    .Card-content {
-        padding: 1.5rem;
-    }
-
-    .Card-content h2 {
-        margin-left: 0;
-        text-align: center;
-        font-size: 1.8rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .Card-image img {
-        width: 100%;
-        height: auto;
-        margin: 0 auto;
-    }
-
-    .Card-content p {
-        font-size: 1.4rem;
-    }
-
-    .AgeRange {
-        font-size: 1.2rem;
-        padding: 0.5rem 1rem;
-    }
+  .AgeRange {
+    font-size: 0.65rem;
+  }
 }
