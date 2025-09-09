@@ -1,27 +1,18 @@
+// components/decoration/CircleGreenHeartIcon.tsx
 import type { SVGProps } from "react";
-
 interface CircleGreenHeartIconProps extends SVGProps<SVGSVGElement> {
-  color?: string;
-  circleColor?: string;
-  rotate?: number; // ângulo em graus
-  direction?: "left" | "right"; // nova prop
+  direction?: "left" | "right";
   width?: string | number;
   height?: string | number;
 }
-
 const CircleGreenHeartIcon = ({
   width = "41.5rem",
   height = "41.5rem",
-  color = "#76BCD7",
-  circleColor = "#FFFFFF",
   direction = "left",
   ...props
 }: CircleGreenHeartIconProps) => {
-  const greenColor = "#61BC55";
-
-  // Se direção for "left", inverte o sinal da rotação
+  const green = "#61BC55";
   const angle = direction === "right" ? 90 : 0;
-
   return (
     <svg
       width="100%"
@@ -33,23 +24,15 @@ const CircleGreenHeartIcon = ({
       preserveAspectRatio="xMidYMid meet"
       {...props}
     >
-      <circle
-        cx="207.499"
-        cy="207.499"
-        r="169.999"
-        stroke={greenColor}
-        strokeWidth="75"
-      />
-
+      <circle cx="207.5" cy="207.5" r="170" stroke={green} strokeWidth={75} />
       <path
         d="M168.434 214.82C179.137 228.945 218.314 221.957 218.314 221.957C218.314 221.957 235.637 186.13 224.933 172.005"
-        stroke="#61BC55"
-        strokeWidth="70"
+        stroke={green}
+        strokeWidth={70}
         strokeLinecap="round"
-        transform={`rotate(${angle} 207.5 207.5)`} // aplica ângulo final
+        transform={`rotate(${angle} 207.5 207.5)`}
       />
     </svg>
   );
 };
-
 export default CircleGreenHeartIcon;

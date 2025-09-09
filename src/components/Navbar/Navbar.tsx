@@ -1,5 +1,5 @@
+import { AppBar, Box, Button, Container, Toolbar } from "@mui/material";
 import React from "react";
-import { AppBar, Toolbar, Button, Box, Container } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 
 export const Navbar: React.FC = () => {
@@ -12,29 +12,29 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <AppBar 
-      position="static" 
+    <AppBar
+      position="static"
       elevation={1}
       sx={{
-        backgroundColor: "#3F96DF",
+        backgroundColor: "#76BCD7",
       }}
     >
       <Container maxWidth="lg">
-        <Toolbar sx={{ justifyContent: "center" }}> 
+        <Toolbar sx={{ justifyContent: "center" }}>
           <Box sx={{
-              display: "flex",
-              justifyContent: "center", 
-              width: "100%",
-              gap: { xs: "1rem", sm: "2rem", md: "4rem", lg: "6rem" },
-            }}>
+            display: "flex",
+            justifyContent: "center",
+            width: "100%",
+            gap: { xs: "1rem", sm: "2rem", md: "4rem", lg: "6rem" },
+          }}>
             {items.map((item) => (
               <Button
                 key={item.path}
                 component={Link}
                 to={item.path}
                 color="inherit"
-                sx={{ 
-                  textTransform: "none", 
+                sx={{
+                  textTransform: "none",
                   fontWeight: location.pathname === item.path ? "bold" : "normal",
                   borderBottom: location.pathname === item.path ? "2px solid #fff" : "none",
                   padding: "1rem 0.5rem",

@@ -5,7 +5,7 @@ export const CardModuleContainer = styled.div`
   grid-template-columns: clamp(240px, 42%, 300px) minmax(0, 1fr);
   align-items: stretch;
   height: 100%;
-  background: #d9d9d9;
+  background: rgba(217, 217, 217, 0.35);
   border-radius: 1.6rem;
   overflow: hidden;
   width: 100%;
