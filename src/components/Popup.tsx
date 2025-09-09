@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../styles/popup.css"
 import AgeRange from "./AgeRange";
 import HamburguerIcon from "../icons/HamburguerIcon";
