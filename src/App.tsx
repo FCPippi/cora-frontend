@@ -1,10 +1,10 @@
-import { Navbar } from "./components/Navbar/Navbar"
-import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
-import Login from "./pages/Login";
+import { Outlet, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Navbar } from "./components/Navbar/Navbar";
 import Cadastro from "./pages/Cadastro";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
 import Module from "./pages/Module";
 import ViewModule from "./pages/ViewModule";
-import Home from "./pages/Home";
 
 const Layout = () => {
   return (
@@ -24,15 +24,14 @@ function App() {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/criar-modulo" element={<Module />} />
         <Route path="/modulo" element={<ViewModule />} />
-        <Route path="/home" element={<Home />} />
-        
+
         <Route element={<Layout />}>
           <Route path="/conta" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página da Conta</div>} />
-          <Route path="/conteudos" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página de Conteúdos</div>} />
+          <Route path="/conteudos" element={<Home />} />
           <Route path="/forum" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página do Fórum</div>} />
           <Route path="/especialistas" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página dos Especialistas</div>} />
         </Route>
-        
+
         <Route path="*" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página não encontrada</div>} />
       </Routes>
     </Router>
