@@ -1,17 +1,23 @@
 
-.age-range-container {
-    width: 16rem;
-    background-color: white;
-    border-radius: 1.5rem;
-    padding: 0.8rem 1.5rem;
-    border: 0.25rem solid #DF3841;
-    display: flex;
-    flex-direction: column;
-    gap: 0.7rem;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+.FaixaEtaria {
+    width: 22rem;
+    background-color: rgb(255, 255, 255);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2.1rem;
+    padding: 1.5rem;
+    border: 1rem solid rgb(223, 56, 65);
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem; 
 }
 
-.age-range-item {
+.texto {
+    color: rgb(119,119,119);
+    font-family: "Cherry Bomb One";
+    margin: 0 0 0.5rem 0;
+    font-size: 2.4rem;
+    text-align: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,30 +53,15 @@
     width: 1.5rem;
     height: 1.5rem;
     cursor: pointer;
-    border: 0.15rem solid #777777;
-    border-radius: 0.2rem;
-    background-color: white;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 0;
-    z-index: 1;
-}
-
-.checkbox:checked {
-    background-color: white;
-}
-
-.checkbox:checked + .checkmark:after {
-    content: '';
-    position: absolute;
-    left: 0.45rem;
-    top: 0.25rem;
-    width: 0.5rem;
-    height: 0.7rem;
-    border: solid #777777;
-    border-width: 0 0.2rem 0.2rem 0;
-    transform: rotate(45deg);
+    position: relative;
+    border: 0.3rem solid rgb(119,119,119);
+    border-radius: 0.4rem;
+    position: relative;
+    
+    vertical-align: middle;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.4rem;
 }
 
 @media (max-width: 576px) {

@@ -4,6 +4,8 @@ import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Module from "./pages/Module";
 import ViewModule from "./pages/ViewModule";
+import Popup from "./components/Popup";
+import AgeRange from "./components/AgeRange";
 import CardModule from "./components/CardModule";
 import Conteudos from "./pages/Conteudos";
 
@@ -25,7 +27,10 @@ function App() {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/criar-modulo" element={<Module />} />
         <Route path="/modulo" element={<ViewModule />} />
-        <Route path="/card-modulo" element={<CardModule title={""} sinopsys={""} thumbnail={""} ageGroup={""} />} />
+        <Route path="/popup" element={<Popup />} />
+        <Route path="/faixa-etaria" element={<AgeRange />} />
+        <Route path="/card-module" element={<CardModule title={"teste"} sinopsys={"teste"} thumbnail={"teste"} ageGroup={"teste"} />} />
+
         
         <Route element={<Layout />}>
           <Route path="/conta" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página da Conta</div>} />

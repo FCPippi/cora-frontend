@@ -15,7 +15,6 @@ function AgeRange() {
         <span className="age-text">13-15 anos</span>
         <div className="checkbox-container">
           <input className="checkbox" type="checkbox" id="filtro2" />
-          <span className="checkmark"></span>
         </div>
       </div>
     </div>
