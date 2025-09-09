@@ -11,14 +11,19 @@ function CardModule() {
       </div>
 
       <div className="Card-content">
-        <h2>CORPO E CONSENTIMENTO</h2>
+        <div className="Card-header">
+          <h2>CORPO E CONSENTIMENTO</h2>
+          <span className="AgeRange">9-12 <br /> anos</span>
+        </div>
 
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias, nam corrupti blanditiis ad quam incidunt voluptatum, ipsam dicta quo, quisquam commodi nihil officia velit repudiandae ipsum labore consequatur voluptatem odio!
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias,
+          nam corrupti blanditiis ad quam incidunt voluptatum, ipsam dicta quo,
+          quisquam commodi nihil officia velit repudiandae ipsum labore
+          consequatur voluptatem odio!
         </p>
       </div>
-
-      <span className="AgeRange">9-12 anos</span>
+      
     </div>
   );
 }
