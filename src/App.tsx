@@ -1,11 +1,11 @@
 import { Navbar } from "./components/Navbar/Navbar"
-import { Categories } from "./components/Categories/Categories"
 import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Module from "./pages/Module";
 import ViewModule from "./pages/ViewModule";
 import CardModule from "./components/CardModule";
+import Conteudos from "./pages/Conteudos";
 
 const Layout = () => {
   return (
@@ -25,11 +25,11 @@ function App() {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/criar-modulo" element={<Module />} />
         <Route path="/modulo" element={<ViewModule />} />
-        <Route path="/card-modulo" element={<CardModule />} />
+        <Route path="/card-modulo" element={<CardModule title={""} sinopsys={""} thumbnail={""} ageGroup={""} />} />
         
         <Route element={<Layout />}>
           <Route path="/conta" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página da Conta</div>} />
-          <Route path="/conteudos" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página de Conteúdos <Categories/></div>} />
+          <Route path="/conteudos" element={<Conteudos />} />
           <Route path="/forum" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página do Fórum</div>} />
           <Route path="/especialistas" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página dos Especialistas</div>} />
         </Route>

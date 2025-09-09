@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Typography, Container } from "@mui/material";
+import "../../styles/Categories.css";
 
 export const Categories: React.FC = () => {
   const [abaSelecionada, setAbaSelecionada] = useState("Populares");
@@ -7,36 +7,22 @@ export const Categories: React.FC = () => {
   const abas = ["Para você", "Recentes", "Populares"];
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 4 }}>
-      <Typography
-        variant="h1"
-        fontWeight="bold"
-        sx={{ fontFamily: "'Alexandria', sans-serif", mb: 2, textAlign: "left", fontSize: "2.5rem", color: "#777777" }}
-      >
+    <div className="categories-container">
+      <h1 className="categories-title">
         Categorias
-      </Typography>
+      </h1>
 
-      <Box sx={{ display: "flex", gap: 3 }}>
+      <div className="categories-tabs">
         {abas.map((aba) => (
-          <Typography
+          <div
             key={aba}
-            component="h2"
+            className={`category-tab ${abaSelecionada === aba ? 'active' : 'inactive'}`}
             onClick={() => setAbaSelecionada(aba)}
-            sx={{
-              cursor: "pointer",
-              fontFamily: "'Alexandria', sans-serif",
-              color: abaSelecionada === aba ? "#777777" : "#aaa",
-              fontWeight: abaSelecionada === aba ? "bold" : "normal",
-              fontSize: "1.25rem",
-              "&:hover": {
-                opacity: 0.8,
-              },
-            }}
           >
             {aba}
-          </Typography>
+          </div>
         ))}
-      </Box>
-    </Container>
+      </div>
+    </div>
   );
 };

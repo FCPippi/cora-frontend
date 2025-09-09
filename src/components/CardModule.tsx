@@ -1,29 +1,68 @@
 import "../styles/CardModule.css";
+import { useMemo } from "react";
+import type { FC } from "react";
 
-function CardModule() {
+// Definindo cores disponíveis
+const COLORS = [
+  "#FF5757", // vermelho
+  "#4A90E2", // azul
+  "#50C878", // verde
+  "#FFD700", // amarelo/dourado
+  "#9370DB"  // roxo
+];
+
+interface CardModuleProps {
+  title: string;
+  sinopsys: string;
+  thumbnail: string;
+  ageGroup: string;
+}
+
+const CardModule: FC<CardModuleProps> = ({ 
+  title, 
+  sinopsys, 
+  thumbnail, 
+  ageGroup
+}) => {
+  // Dividir o texto da faixa etária em linhas separadas
+  const ageParts = ageGroup.split(' ');
+  
+  // Gerar uma cor aleatória
+  const randomColor = useMemo(() => {
+    return COLORS[Math.floor(Math.random() * COLORS.length)];
+  }, []);
+  
   return (
     <div className="Card">
-      <div className="Card-image">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Ronaldinho_in_2019.jpg/500px-Ronaldinho_in_2019.jpg"
-          alt="Ronaldinho gaucho"
-        />
-      </div>
-
-      <div className="Card-content">
-        <div className="Card-header">
-          <h2>CORPO E CONSENTIMENTO</h2>
-          <span className="AgeRange">9-12 <br /> anos</span>
+      {/* Conteúdo do card */}
+      <div className="Card-inner">
+        {/* Thumbnail colada à esquerda com altura do card */}
+        <div 
+          className="Card-thumbnail" 
+          style={{
+            borderLeft: `5px solid ${randomColor}`,
+            borderTop: `5px solid ${randomColor}`,
+            borderBottom: `5px solid ${randomColor}`,
+            borderRight: `5px solid ${randomColor}`
+          }}
+        >
+          <img
+            src={thumbnail}
+            alt={title}
+          />
         </div>
 
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias,
-          nam corrupti blanditiis ad quam incidunt voluptatum, ipsam dicta quo,
-          quisquam commodi nihil officia velit repudiandae ipsum labore
-          consequatur voluptatem odio!
-        </p>
+        <div className="Card-content">
+          <div className="Card-header">
+            <h2 style={{ color: randomColor }}>{title}</h2>
+            <span className="AgeRange">
+              {ageParts[0]} <br /> {ageParts[1]}
+            </span>
+          </div>
+
+          <p>{sinopsys}</p>
+        </div>
       </div>
-      
     </div>
   );
 }
