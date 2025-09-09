@@ -7,6 +7,7 @@ import ViewModule from "./pages/ViewModule";
 import Popup from "./components/Popup";
 import AgeRange from "./components/AgeRange";
 import CardModule from "./components/CardModule";
+import Conteudos from "./pages/Conteudos";
 
 const Layout = () => {
   return (
@@ -28,7 +29,7 @@ function App() {
         <Route path="/modulo" element={<ViewModule />} />
         <Route path="/popup" element={<Popup />} />
         <Route path="/faixa-etaria" element={<AgeRange />} />
-        <Route path="/card-module" element={<CardModule />} />
+        <Route path="/card-module" element={<CardModule title={"teste"} sinopsys={"teste"} thumbnail={"teste"} ageGroup={"teste"} />} />
 
         
         <Route element={<Layout />}>
