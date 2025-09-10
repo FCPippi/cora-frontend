@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/popup.css"
 import AgeRange from "./AgeRange";
-import HamburguerIcon from "../icons/HamburguerIcon";
+import FilterIcon from "../icons/FilterIcon";
 
 
 function Popup() {
@@ -10,7 +10,7 @@ function Popup() {
   return (
     <div>
       <button className = "popup-icon" onClick={() => setIsOpen(true)}>
-        <HamburguerIcon/>
+        <FilterIcon/>
       </button>
 
       {isOpen && (
