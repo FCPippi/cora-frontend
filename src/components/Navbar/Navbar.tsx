@@ -5,10 +5,10 @@ import { Link, useLocation } from "react-router-dom";
 export const Navbar: React.FC = () => {
   const location = useLocation();
   const items = [
-    { label: "Conta", path: "/conta" },
+    { label: "Conta", path: "/account" },
     { label: "Conteúdos", path: "/contents" },
     { label: "Fórum", path: "/forum" },
-    { label: "Especialistas", path: "/especialistas" },
+    { label: "Especialistas", path: "/specialists" },
   ];
 
   return (

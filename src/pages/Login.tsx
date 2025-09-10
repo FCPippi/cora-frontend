@@ -32,26 +32,26 @@ const Login: React.FC = () => {
         <FatCircleIcon
           className="bg-circle top-left"
           color="#7ABBD7"
-          width="40rem"
-          height="40rem"
+          width="39rem"
+          height="39rem"
         />
         <CircleIcon
           className="bg-circle top-right"
           color="#FDC647"
-          width="30rem"
-          height="30rem"
+          width="40rem"
+          height="40rem"
         />
         <RedHeartIcon
           className="bg-heart red-heart bottom-left"
           color="#DF3841"
-          width="35rem"
-          height="35rem"
+          width="30rem"
+          height="30rem"
         />
         <CircleGreenHeartIcon
           className="bg-circle bottom-right"
           color="#61BC55"
-          width="35rem"
-          height="35rem"
+          width="40rem"
+          height="40rem"
         />
       </div>
 
