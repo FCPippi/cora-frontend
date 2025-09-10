@@ -351,6 +351,7 @@ body {
   .heart-icon {
     top: -8%;
     left: -2%;
+    width: 5rem;
   }
 
   .plus-btn {
