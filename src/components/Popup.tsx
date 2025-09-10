@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import "../styles/Popup.css";
+import "../styles/popup.css";
 import AgeRange from "./AgeRange";
 import FilterIcon from "../icons/FilterIcon";
 
