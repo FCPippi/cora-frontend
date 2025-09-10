@@ -3,7 +3,12 @@ import "../styles/popup.css";
 import AgeRange from "./AgeRange";
 import FilterIcon from "../icons/FilterIcon";
 
-function Popup() {
+interface PopupProps {
+  ageFilters: { [key: string]: boolean };
+  onAgeFilterChange: (ageGroup: string, checked: boolean) => void;
+}
+
+function Popup({ ageFilters, onAgeFilterChange }: PopupProps) {
   const [isOpen, setIsOpen] = useState(false);
   const popupRef = useRef<HTMLDivElement>(null);
 
@@ -31,7 +36,10 @@ function Popup() {
 
       {isOpen && (
         <div className="popup-dropdown">
-          <AgeRange />
+          <AgeRange 
+            ageFilters={ageFilters}
+            onAgeFilterChange={onAgeFilterChange}
+          />
         </div>
       )}
     </div>

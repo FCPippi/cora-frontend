@@ -9,8 +9,6 @@ import Login from "./pages/Login";
 import Registration from "./pages/Registration";
 import Module from "./pages/Module";
 import ViewModule from "./pages/ViewModule";
-import Popup from "./components/Popup";
-import AgeRange from "./components/AgeRange";
 import CardModule from "./components/CardModule";
 import Contents from "./pages/Contents";
 
@@ -32,8 +30,6 @@ function App() {
         <Route path="/registration" element={<Registration />} />
         <Route path="/create-module" element={<Module />} />
         <Route path="/module" element={<ViewModule />} />
-        <Route path="/popup" element={<Popup />} />
-        <Route path="/age-range" element={<AgeRange />} />
         <Route
           path="/card-module"
           element={

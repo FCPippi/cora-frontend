@@ -1,21 +1,29 @@
 import "../styles/AgeRangeStyle.css";
 
-function AgeRange() {
+interface AgeRangeProps {
+  ageFilters: { [key: string]: boolean };
+  onAgeFilterChange: (ageGroup: string, checked: boolean) => void;
+}
+
+function AgeRange({ ageFilters, onAgeFilterChange }: AgeRangeProps) {
+  const ageGroups = ["9-12 anos", "13-15 anos"];
+
   return (
     <div className="age-range-container">
-      <div className="age-range-item">
-        <span className="age-text">9-12 anos</span>
-        <div className="checkbox-container">
-          <input className="checkbox" type="checkbox" id="filtro1" defaultChecked />
+      {ageGroups.map((ageGroup) => (
+        <div key={ageGroup} className="age-range-item">
+          <span className="age-text">{ageGroup}</span>
+          <div className="checkbox-container">
+            <input 
+              className="checkbox" 
+              type="checkbox" 
+              id={`filtro-${ageGroup}`}
+              checked={ageFilters[ageGroup] || false}
+              onChange={(e) => onAgeFilterChange(ageGroup, e.target.checked)}
+            />
+          </div>
         </div>
-      </div>
-
-      <div className="age-range-item">
-        <span className="age-text">13-15 anos</span>
-        <div className="checkbox-container">
-          <input className="checkbox" type="checkbox" id="filtro2" defaultChecked />
-        </div>
-      </div>
+      ))}
     </div>
   );
 }

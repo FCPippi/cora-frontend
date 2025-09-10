@@ -9,10 +9,14 @@
   padding: 0;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  max-height: 220px;
-  transition: transform 0.2s ease-in-out;
+  min-height: 220px;
+  max-height: 250px;
+  transition: transform 0.2s ease-in-out, opacity 0.4s ease-in-out, scale 0.4s ease-in-out;
   position: relative;
   border: 1px solid #e0e0e0;
+  opacity: 1;
+  scale: 1;
+  animation: cardFadeIn 0.5s ease-out;
 }
 
 .Card:hover {
@@ -119,12 +123,18 @@
 
 @media (max-width: 992px) {
   .Card {
-    max-height: none;
+    min-height: 200px;
+    max-height: 230px;
+  }
+
+  .Card-thumbnail {
+    width: 160px;
+    min-width: 160px;
   }
 
   .Card-content p {
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -134,7 +144,13 @@
 @media (max-width: 768px) {
   .Card {
     flex-direction: row;
-    max-height: none;
+    min-height: 180px;
+    max-height: 200px;
+  }
+
+  .Card-thumbnail {
+    width: 140px;
+    min-width: 140px;
   }
 
   .Card-image {
@@ -164,15 +180,21 @@
 }
 
 @media (max-width: 576px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    max-width: 85vw;
+    gap: 2rem;
+  }
+
   .Card {
     flex-direction: row;
-    max-height: none;
-    height: 150px; /* Altura fixa para garantir consistência */
+    min-height: 220px;
+    max-height: 260px;
   }
 
   .Card-thumbnail {
-    width: 110px;
-    min-width: 110px;
+    width: 150px;
+    min-width: 150px;
   }
 
   .Card-header {
@@ -205,4 +227,43 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+}
+
+/* Animações para filtros */
+@keyframes cardFadeIn {
+  0% {
+    opacity: 0;
+    scale: 0.8;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardFadeOut {
+  0% {
+    opacity: 1;
+    scale: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    scale: 0.8;
+    transform: translateY(-20px);
+  }
+}
+
+/* Classes para animações de filtro */
+.Card-entering {
+  animation: cardFadeIn 0.5s ease-out;
+}
+
+.Card-exiting {
+  animation: cardFadeOut 0.4s ease-in;
+  opacity: 0;
+  scale: 0.8;
+  pointer-events: none;
 }

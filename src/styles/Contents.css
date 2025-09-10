@@ -1,6 +1,7 @@
 .contents-page {
-  padding: 2rem;
-  max-width: 1400px;
+  padding: 4rem 3rem;
+  max-width: none;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   min-height: 100vh;
@@ -126,50 +127,84 @@
   overflow-x: auto;
   align-self: flex-start;
   margin-top: 0.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  padding: 0 4rem;
 }
 
 .card-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin-top: 2rem;
-  position: relative;
-  z-index: 1;
-  width: 100%;
+  gap: 4rem;
+  margin-top: 1rem;
+  width: calc(100vw - 8rem);
+  margin-left: 4rem;
+  margin-right: 4rem;
+  transition: all 0.3s ease-in-out;
 }
 
 @media (min-width: 1400px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 5rem;
+    width: calc(100vw - 8rem);
+    margin-left: 2rem;
+    margin-right: 8rem;
+  }
+
+  .categories-wrapper {
+    padding: 0 3rem;
   }
 }
 
 @media (max-width: 1200px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 4rem;
+    width: calc(100vw - 8rem);
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+
+  .categories-wrapper {
+    padding: 0 4rem;
   }
 }
 
 @media (max-width: 992px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 3rem;
+    width: calc(100vw - 6rem);
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+  .categories-wrapper {
+    padding: 0 3rem;
   }
 }
 
 @media (max-width: 768px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 2rem;
+    width: calc(100vw - 4rem);
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .categories-wrapper {
+    padding: 0 2rem;
   }
 }
 
 @media (max-width: 576px) {
   .card-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: calc(100vw - 4rem);
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
 
   .contents-greeting {
@@ -213,11 +248,9 @@
   }
 
   .categories-wrapper {
-    padding: 0.5rem 0;
+    padding: 0.5rem 2rem;
     width: 100vw;
     margin-left: -1rem;
     margin-right: -1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
   }
 }

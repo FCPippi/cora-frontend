@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Contents.css";
 import SearchBar from "../components/SearchBar";
 import { Categories } from "../components/Categories/Categories";
@@ -24,6 +24,20 @@ interface ModuleData {
 }
 
 const Contents: React.FC = () => {
+  // Estado para controlar os filtros de idade
+  const [ageFilters, setAgeFilters] = useState({
+    "9-12 anos": true,
+    "13-15 anos": true,
+  });
+
+  // Função para atualizar os filtros
+  const handleAgeFilterChange = (ageGroup: string, checked: boolean) => {
+    setAgeFilters(prev => ({
+      ...prev,
+      [ageGroup]: checked
+    }));
+  };
+
   // Dados de exemplo para os cards, com base no modelo Module
   const moduleData: ModuleData[] = [
     {
@@ -60,6 +74,11 @@ const Contents: React.FC = () => {
     },
   ];
 
+  // Filtrar módulos com base nos filtros de idade selecionados
+  const filteredModules = moduleData.filter(module => 
+    ageFilters[module.ageGroup as keyof typeof ageFilters]
+  );
+
   return (
     <>
       <div className="background-elements">
@@ -93,7 +112,10 @@ const Contents: React.FC = () => {
         <div className="header-search-section">
           <div className="header-row">
             <h1 className="contents-greeting">Olá, Maria!</h1>
-            <Popup />
+            <Popup 
+              ageFilters={ageFilters}
+              onAgeFilterChange={handleAgeFilterChange}
+            />
           </div>
 
           <p className="contents-question">
@@ -110,7 +132,7 @@ const Contents: React.FC = () => {
         </div>
 
         <div className="card-grid">
-          {moduleData.map((module) => (
+          {filteredModules.map((module) => (
             <CardModule
               key={module.module_id}
               title={module.title}
