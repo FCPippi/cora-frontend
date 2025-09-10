@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/Conteudos.css";
+import "../styles/Contents.css";
 import SearchBar from "../components/SearchBar";
 import { Categories } from "../components/Categories/Categories";
 import FilterIcon from "../icons/FilterIcon";
@@ -8,7 +8,7 @@ import CardModule from "../components/CardModule";
 import CircleIcon from '../icons/CircleIcon';
 import FatCircleIcon from '../icons/FatCircleIcon';
 import RedHeartIcon from '../icons/RedHeartIcon';
-import CircleGreenHeartIcon from '../icons/CircleGreenHeart';
+import CircleGreenHeartIcon from '../icons/CircleGreenHeartIcon';
 
 // Importação das imagens
 import VitoImg from "../assets/Vitor.png";
@@ -24,7 +24,7 @@ interface ModuleData {
   ageGroup: string;
 }
 
-const Conteudos: React.FC = () => {
+const Contents: React.FC = () => {
   const [showFilter, setShowFilter] = useState(false);
   
   // Dados de exemplo para os cards, com base no modelo Module
@@ -72,10 +72,10 @@ const Conteudos: React.FC = () => {
         <CircleGreenHeartIcon className="bg-circle bottom-right" color="#61BC55" width="25rem" height="25rem" />
       </div>
       
-      <div className="conteudos-page">
+      <div className="contents-page">
         <div className="header-search-section">
           <div className="header-row">
-            <h1 className="conteudos-greeting">Olá, Maria!</h1>
+            <h1 className="contents-greeting">Olá, Maria!</h1>
             <div className="filter-icon" onClick={toggleFilter}>
               <FilterIcon width="36" height="36" />
             </div>
@@ -87,7 +87,7 @@ const Conteudos: React.FC = () => {
             )}
           </div>
           
-          <p className="conteudos-question">O que você gostaria de aprender hoje?</p>
+          <p className="contents-question">O que você gostaria de aprender hoje?</p>
           
           <div className="search-container">
             <SearchBar />
@@ -114,4 +114,4 @@ const Conteudos: React.FC = () => {
   );
 };
 
-export default Conteudos;
+export default Contents;

@@ -1,13 +1,13 @@
 import { Navbar } from "./components/Navbar/Navbar"
 import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
 import Login from "./pages/Login";
-import Cadastro from "./pages/Cadastro";
+import Registration from "./pages/Registration";
 import Module from "./pages/Module";
 import ViewModule from "./pages/ViewModule";
 import Popup from "./components/Popup";
 import AgeRange from "./components/AgeRange";
 import CardModule from "./components/CardModule";
-import Conteudos from "./pages/Conteudos";
+import Contents from "./pages/Contents";
 
 const Layout = () => {
   return (
@@ -24,7 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/registration" element={<Registration />} />
         <Route path="/criar-modulo" element={<Module />} />
         <Route path="/modulo" element={<ViewModule />} />
         <Route path="/popup" element={<Popup />} />
@@ -34,7 +34,7 @@ function App() {
         
         <Route element={<Layout />}>
           <Route path="/conta" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página da Conta</div>} />
-          <Route path="/conteudos" element={<Conteudos />} />
+          <Route path="/contents" element={<Contents />} />
           <Route path="/forum" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página do Fórum</div>} />
           <Route path="/especialistas" element={<div style={{ padding: "2rem", textAlign: "center" }}>Página dos Especialistas</div>} />
         </Route>

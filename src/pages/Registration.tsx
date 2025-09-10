@@ -3,16 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import FatCircleIcon from '../icons/FatCircleIcon';
 import CircleIcon from '../icons/CircleIcon';
 import RedHeartIcon from '../icons/RedHeartIcon';
-import CircleGreenHeartIcon from '../icons/CircleGreenHeart';
+import CircleGreenHeartIcon from '../icons/CircleGreenHeartIcon';
 import ArrowIcon from '../icons/ArrowIcon';
-import '../styles/Cadastro.css';
+import '../styles/Registration.css';
 import CoraGroupImage from '../assets/CoraGroup.png';
 import Clara from '../assets/Clara.png';
 import Vitor from '../assets/Vitor.png';
 import Rafa from '../assets/Rafa.png';
 import Cora from '../assets/Cora.png';
 
-const Cadastro: React.FC = () => {
+const Registration: React.FC = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -174,7 +174,7 @@ const Cadastro: React.FC = () => {
     }
   };
 
-  const finalizarCadastro = () => {
+  const completeRegistration = () => {
     if (children.length > 0 || (childData.fullName || childData.birthDate)) {
       let allChildren = [...children];
       if (childData.fullName || childData.birthDate) {
@@ -233,7 +233,7 @@ const Cadastro: React.FC = () => {
   };
 
   return (
-    <div className="cadastro-container">
+    <div className="registration-container">
       <div className="top-bar">
         <button className="voltar-button" onClick={handleVoltar}>
           <ArrowIcon className="voltar-icon" color="#FDC647" circleColor="#FFFFFF" /> Voltar
@@ -248,13 +248,13 @@ const Cadastro: React.FC = () => {
       </div>
 
       {step === 1 ? (
-        <div className="cadastro-content">
+        <div className="registration-content">
           <div className="illustration-section">
             <img src={CoraGroupImage} alt="Grupo Cora" className="cora-group-image" />
           </div>
 
           <div className="form-section">
-            <h1 className="cadastro-title">Faça seu cadastro!</h1>
+            <h1 className="registration-title">Faça seu cadastro!</h1>
             
             <form onSubmit={(e) => {
               e.preventDefault();
@@ -399,7 +399,7 @@ const Cadastro: React.FC = () => {
           </div>
         </div>
       ) : (
-        <div className="cadastro-content child-info">
+        <div className="registration-content child-info">
           <div className="child-background">
             <img src={Vitor} alt="Vitor" className="child-avatar vitor" />
             <img src={Clara} alt="Clara" className="child-avatar clara" />
@@ -465,7 +465,7 @@ const Cadastro: React.FC = () => {
                 <button type="button" className="add-child-button" onClick={addChild}>
                   Adicionar nova criança
                 </button>
-                <button type="button" className="finalizar-button" onClick={finalizarCadastro}>
+                <button type="button" className="finalizar-button" onClick={completeRegistration}>
                   Finalizar cadastro
                 </button>
               </div>
@@ -477,4 +477,4 @@ const Cadastro: React.FC = () => {
   );
 };
 
-export default Cadastro;
+export default Registration;

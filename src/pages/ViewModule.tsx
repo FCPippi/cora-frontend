@@ -6,11 +6,11 @@ import "../styles/Module.css";
 import FatCircleIcon from "../icons/FatCircleIcon";
 import CircleIcon from "../icons/CircleIcon";
 import RedHeartIcon from "../icons/RedHeartIcon";
-import CircleGreenHeartIcon from "../icons/CircleGreenHeart";
+import CircleGreenHeartIcon from "../icons/CircleGreenHeartIcon";
 import ArrowIcon from "../icons/ArrowIcon";
 
 import { useNavigate } from "react-router-dom";
-import CircleHeartIcon from "../icons/Coração";
+import CircleHeartIcon from "../icons/Heart";
 
 export default function ViewModule() {
   const navigate = useNavigate();
@@ -49,7 +49,7 @@ export default function ViewModule() {
     if (step === 2) {
       setStep(1);
     } else {
-      navigate('/conteudos');
+      navigate('/contents');
     }
   };
 

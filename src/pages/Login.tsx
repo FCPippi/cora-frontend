@@ -4,7 +4,7 @@ import CoraLogoIcon from '../icons/CoraLogoIcon';
 import CircleIcon from '../icons/CircleIcon';
 import FatCircleIcon from '../icons/FatCircleIcon';
 import RedHeartIcon from '../icons/RedHeartIcon';
-import CircleGreenHeartIcon from '../icons/CircleGreenHeart';
+import CircleGreenHeartIcon from '../icons/CircleGreenHeartIcon';
 import '../styles/Login.css';
 
 const Login: React.FC = () => {
@@ -19,7 +19,7 @@ const Login: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-    navigate('/conteudos');
+    navigate('/contents');
   };
 
   const togglePassword = () => {
@@ -107,7 +107,7 @@ const Login: React.FC = () => {
             </button>
 
             <div className="register-option">
-              <p>Não tem uma conta? <a href="/cadastro">Cadastre-se</a></p>
+              <p>Não tem uma conta? <a href="/registration">Cadastre-se</a></p>
             </div>
           </form>
         </div>

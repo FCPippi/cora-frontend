@@ -10,7 +10,7 @@ import "../styles/Module.css";
 import FatCircleIcon from "../icons/FatCircleIcon";
 import CircleIcon from "../icons/CircleIcon";
 import RedHeartIcon from "../icons/RedHeartIcon";
-import CircleGreenHeartIcon from "../icons/CircleGreenHeart";
+import CircleGreenHeartIcon from "../icons/CircleGreenHeartIcon";
 import PlusIcon from "../icons/PlusIcon";
 
 import { IconButton } from "@mui/material";
@@ -64,7 +64,7 @@ export default function Module() {
     if (step === 2) {
       setStep(1);
     } else {
-      navigate('/conteudos');
+      navigate('/contents');
     }
   };
 

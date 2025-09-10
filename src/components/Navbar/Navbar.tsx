@@ -6,7 +6,7 @@ export const Navbar: React.FC = () => {
   const location = useLocation();
   const items = [
     { label: "Conta", path: "/conta" },
-    { label: "Conteúdos", path: "/conteudos" },
+    { label: "Conteúdos", path: "/contents" },
     { label: "Fórum", path: "/forum" },
     { label: "Especialistas", path: "/especialistas" },
   ];

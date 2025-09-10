@@ -1,4 +1,4 @@
-import CircleHeartIcon from "../../icons/Coração";
+import CircleHeartIcon from "../../icons/Heart";
 
 type Props = {
   title: string;
