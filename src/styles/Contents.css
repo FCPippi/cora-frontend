@@ -65,14 +65,16 @@
   margin-bottom: 2rem;
   position: relative;
   z-index: 1;
+  align-items: center;
 }
 
 .header-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
-  margin-bottom: 0.2rem;
+  max-width: 70rem;
+  margin: 0 auto 0.2rem auto;
 }
 
 .contents-greeting {
@@ -80,36 +82,33 @@
   font-size: 3.8rem;
   font-weight: 500;
   color: #777777;
-  margin-top: 2rem;
+  margin: 4rem 0 0 0;
   text-align: left;
+  width: 100%;
+  max-width: 70rem;
+  align-self: center;
 }
 
 .contents-question {
   font-family: "Alexandria", sans-serif;
   font-size: 2.2rem;
   color: #777777;
-  margin: 0.5rem 0 1rem 0;
+  margin: 0rem 0 2rem 0;
   display: block;
   width: 100%;
+  max-width: 70rem;
   text-align: left;
-}
-
-.filter-icon {
-  cursor: pointer;
-  width: 10.5rem;
-  height: 10.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  align-self: center;
 }
 
 .search-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 1.5rem;
   position: relative;
   width: 100%;
+  align-self: center;
 }
 
 .filter-popup {
@@ -177,26 +176,40 @@
     font-size: 2.2rem;
   }
 
+  .header-row {
+    max-width: 450px;
+  }
+
   .contents-question {
     font-size: 1.5rem;
-    margin: 0.3rem 0 0.8rem 0;
+    margin: 0rem 0 1.5rem 0;
+    max-width: 450px;
   }
 
   .header-search-section {
     margin-bottom: 0.5rem;
-  }
-
-  .filter-icon {
-    width: 2.8rem;
-    height: 2.8rem;
+    align-items: center;
   }
 
   .search-container {
     margin-bottom: 0rem;
+    align-self: center;
   }
 
   .contents-page {
     padding: 1rem;
+  }
+
+  .header-row {
+    max-width: 400px;
+  }
+
+  .contents-greeting {
+    font-size: 2rem;
+  }
+
+  .contents-question {
+    max-width: 400px;
   }
 
   .categories-wrapper {

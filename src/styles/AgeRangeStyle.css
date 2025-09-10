@@ -1,3 +1,112 @@
+/* Container principal */
+.age-range-container {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid #DF3841;
+}
+
+/* Item individual de faixa etária */
+.age-range-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.age-range-item:last-child {
+  border-bottom: none;
+}
+
+/* Texto da faixa etária */
+.age-text {
+  color: #777777;
+  font-family: "Alexandria", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Container do checkbox */
+.checkbox-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Checkbox estilizado */
+.checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  border: 2px solid #777777;
+  border-radius: 0.3rem;
+  background-color: transparent;
+  position: relative;
+  margin: 0;
+  transition: all 0.2s ease;
+}
+
+.checkbox:checked {
+  background-color: #777777;
+  border-color: #777777;
+}
+
+.checkbox:checked::after {
+  content: "✓";
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkbox:hover {
+  border-color: #555555;
+}
+
+/* Checkmark span (não usado mais, mas mantido para compatibilidade) */
+.checkmark {
+  pointer-events: none;
+}
+
+/* Responsivo */
+@media (max-width: 576px) {
+  .age-range-container {
+    padding: 0.8rem;
+  }
+
+  .age-text {
+    font-size: 0.9rem;
+  }
+
+  .checkbox-container {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+  .checkbox {
+    width: 1.3rem;
+    height: 1.3rem;
+    border-width: 1.5px;
+  }
+
+  .checkbox:checked::after {
+    font-size: 0.8rem;
+  }
+}
+
+/* Classes antigas mantidas para compatibilidade */
 .FaixaEtaria {
   width: 22rem;
   background-color: rgb(255, 255, 255);
@@ -21,92 +130,4 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.3rem 0;
-}
-
-.age-text {
-  color: #777777;
-  font-family: "Alexandria", sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.checkbox-container {
-  position: relative;
-  display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 1.5rem;
-  width: 1.5rem;
-  pointer-events: none;
-}
-
-.checkbox {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 1.5rem;
-  height: 1.5rem;
-  cursor: pointer;
-  position: relative;
-  border: 0.3rem solid rgb(119, 119, 119);
-  border-radius: 0.4rem;
-  position: relative;
-
-  vertical-align: middle;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 0.4rem;
-}
-
-@media (max-width: 576px) {
-  .age-range-container {
-    width: 14rem;
-    padding: 0.8rem 1.2rem;
-  }
-
-  .age-text {
-    font-size: 0.9rem;
-  }
-
-  .checkbox-container {
-    width: 1.3rem;
-    height: 1.3rem;
-  }
-
-  .checkbox {
-    width: 1.3rem;
-    height: 1.3rem;
-  }
-
-  .checkmark {
-    width: 1.3rem;
-    height: 1.3rem;
-  }
-
-  .checkbox:checked + .checkmark:after {
-    left: 0.4rem;
-    top: 0.2rem;
-    width: 0.45rem;
-    height: 0.6rem;
-  }
-}
-
-.checkbox:checked {
-  background-color: rgb(119, 119, 119);
-  border-color: rgb(119, 119, 119);
-}
-
-.checkbox:checked::after {
-  content: "✓";
-  color: white;
-  font-size: 16px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }

@@ -6,15 +6,14 @@ function AgeRange() {
       <div className="age-range-item">
         <span className="age-text">9-12 anos</span>
         <div className="checkbox-container">
-          <input className="checkbox" type="checkbox" id="filtro1" />
-          <span className="checkmark"></span>
+          <input className="checkbox" type="checkbox" id="filtro1" defaultChecked />
         </div>
       </div>
 
       <div className="age-range-item">
         <span className="age-text">13-15 anos</span>
         <div className="checkbox-container">
-          <input className="checkbox" type="checkbox" id="filtro2" />
+          <input className="checkbox" type="checkbox" id="filtro2" defaultChecked />
         </div>
       </div>
     </div>

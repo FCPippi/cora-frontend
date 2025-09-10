@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/Contents.css";
 import SearchBar from "../components/SearchBar";
 import { Categories } from "../components/Categories/Categories";
-import FilterIcon from "../icons/FilterIcon";
-import AgeRange from "../components/AgeRange";
+import Popup from "../components/Popup";
 import CardModule from "../components/CardModule";
 import CircleIcon from "../icons/CircleIcon";
 import FatCircleIcon from "../icons/FatCircleIcon";
@@ -25,8 +24,6 @@ interface ModuleData {
 }
 
 const Contents: React.FC = () => {
-  const [showFilter, setShowFilter] = useState(false);
-
   // Dados de exemplo para os cards, com base no modelo Module
   const moduleData: ModuleData[] = [
     {
@@ -63,10 +60,6 @@ const Contents: React.FC = () => {
     },
   ];
 
-  const toggleFilter = () => {
-    setShowFilter(!showFilter);
-  };
-
   return (
     <>
       <div className="background-elements">
@@ -100,15 +93,7 @@ const Contents: React.FC = () => {
         <div className="header-search-section">
           <div className="header-row">
             <h1 className="contents-greeting">Olá, Maria!</h1>
-            <div className="filter-icon" onClick={toggleFilter}>
-              <FilterIcon width="36" height="36" />
-            </div>
-
-            {showFilter && (
-              <div className="filter-popup">
-                <AgeRange />
-              </div>
-            )}
+            <Popup />
           </div>
 
           <p className="contents-question">

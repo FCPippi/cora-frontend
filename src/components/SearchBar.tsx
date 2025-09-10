@@ -6,7 +6,7 @@ const SearchBar: React.FC = () => {
   return (
     <div className={styles.searchBarContainer}>
       <span className={styles.icon}>
-        <SearchIcon />
+        <SearchIcon width="3.5rem" height="3rem" />
       </span>
       <input
         className={styles.input}
