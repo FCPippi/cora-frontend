@@ -1,105 +1,104 @@
-
 .FaixaEtaria {
-    width: 22rem;
-    background-color: rgb(255, 255, 255);
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 2.1rem;
-    padding: 1.5rem;
-    border: 1rem solid rgb(223, 56, 65);
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem; 
+  width: 22rem;
+  background-color: rgb(255, 255, 255);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2.1rem;
+  padding: 1.5rem;
+  border: 1rem solid rgb(223, 56, 65);
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
 }
 
 .texto {
-    color: rgb(119,119,119);
-    font-family: "Cherry Bomb One";
-    margin: 0 0 0.5rem 0;
-    font-size: 2.4rem;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.3rem 0;
+  color: rgb(119, 119, 119);
+  font-family: "Cherry Bomb One";
+  margin: 0 0 0.5rem 0;
+  font-size: 2.4rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 0;
 }
 
 .age-text {
-    color: #777777;
-    font-family: "Alexandria", sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
+  color: #777777;
+  font-family: "Alexandria", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .checkbox-container {
-    position: relative;
-    display: inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
+  position: relative;
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 1.5rem;
-    width: 1.5rem;
-    pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  pointer-events: none;
 }
 
 .checkbox {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 1.5rem;
-    height: 1.5rem;
-    cursor: pointer;
-    position: relative;
-    border: 0.3rem solid rgb(119,119,119);
-    border-radius: 0.4rem;
-    position: relative;
-    
-    vertical-align: middle;
-    align-items: center;
-    gap: 0.8rem;
-    margin-bottom: 0.4rem;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  position: relative;
+  border: 0.3rem solid rgb(119, 119, 119);
+  border-radius: 0.4rem;
+  position: relative;
+
+  vertical-align: middle;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.4rem;
 }
 
 @media (max-width: 576px) {
-    .age-range-container {
-        width: 14rem;
-        padding: 0.8rem 1.2rem;
-    }
-    
-    .age-text {
-        font-size: 0.9rem;
-    }
-    
-    .checkbox-container {
-        width: 1.3rem;
-        height: 1.3rem;
-    }
-    
-    .checkbox {
-        width: 1.3rem;
-        height: 1.3rem;
-    }
-    
-    .checkmark {
-        width: 1.3rem;
-        height: 1.3rem;
-    }
-    
-    .checkbox:checked + .checkmark:after {
-        left: 0.4rem;
-        top: 0.2rem;
-        width: 0.45rem;
-        height: 0.6rem;
-    }
+  .age-range-container {
+    width: 14rem;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .age-text {
+    font-size: 0.9rem;
+  }
+
+  .checkbox-container {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+  .checkbox {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+  .checkmark {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+  .checkbox:checked + .checkmark:after {
+    left: 0.4rem;
+    top: 0.2rem;
+    width: 0.45rem;
+    height: 0.6rem;
+  }
 }
 
-.checkbox:checked{
-    background-color: rgb(119,119,119);
-    border-color: rgb(119,119,119);
+.checkbox:checked {
+  background-color: rgb(119, 119, 119);
+  border-color: rgb(119, 119, 119);
 }
 
 .checkbox:checked::after {
@@ -111,5 +110,3 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-

@@ -38,7 +38,7 @@ body {
   text-align: center;
   font-size: 28px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  background: #D9D9D959;
+  background: #d9d9d959;
   max-width: 100%;
   margin: 20px auto;
   padding: 20px;
@@ -56,12 +56,9 @@ body {
 .title {
   text-align: center;
   font-family: "Cherry Bomb One", cursive;
-  color: #ED67A3;
+  color: #ed67a3;
   font-size: 36px;
-  text-shadow:
-    -2px -2px 0 #fff,
-    2px -2px 0 #fff,
-    -2px 2px 0 #fff,
+  text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff,
     2px 2px 0 #fff;
 
   border: none;
@@ -72,12 +69,9 @@ body {
 
 .title-age-group {
   font-family: "Cherry Bomb One", cursive;
-  color: #ED67A3;
+  color: #ed67a3;
   font-size: 24px;
-  text-shadow:
-    -2px -2px 0 #fff,
-    2px -2px 0 #fff,
-    -2px 2px 0 #fff,
+  text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff,
     2px 2px 0 #fff;
 }
 
@@ -99,7 +93,7 @@ body {
 .age-box {
   display: flex;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  background: #D9D9D959;
+  background: #d9d9d959;
   max-width: 100%;
   margin: 20px auto;
   padding: 20px;
@@ -154,14 +148,14 @@ body {
   margin-bottom: 20%;
 }
 
-.checkbox-age-group:checked+.custom-check::after {
+.checkbox-age-group:checked + .custom-check::after {
   opacity: 1;
 }
 
 .thumb {
   display: flex;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  background: #D9D9D959;
+  background: #d9d9d959;
   max-width: 100%;
   margin: 20px auto;
   padding: 20px;
@@ -173,19 +167,16 @@ body {
 
 .thumb-title {
   font-family: "Cherry Bomb One", cursive;
-  color: #ED67A3;
+  color: #ed67a3;
   font-size: 24px;
-  text-shadow:
-    -2px -2px 0 #fff,
-    2px -2px 0 #fff,
-    -2px 2px 0 #fff,
+  text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff,
     2px 2px 0 #fff;
 }
 
 .textarea-container {
   display: flex;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  background: #D9D9D959;
+  background: #d9d9d959;
   max-width: 100%;
   margin: 20px auto;
   padding: 20px;
@@ -213,7 +204,7 @@ body {
   width: 130px;
   margin: 40px auto 0;
   padding: 10px 20px;
-  background: #76BCD7;
+  background: #76bcd7;
   color: white;
   border: none;
   border-radius: 20px;
@@ -238,7 +229,7 @@ body {
 
   left: 50%;
   transform: translateX(-50%);
-  
+
   width: 50px;
   height: 50px;
   background: #f0f0f0;
@@ -280,7 +271,7 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 101;
-  font-family: 'Alexandria', sans-serif;
+  font-family: "Alexandria", sans-serif;
   font-weight: 500;
   gap: 4px;
 }
@@ -298,7 +289,7 @@ body {
   left: 0;
   width: 100%;
   height: 6rem;
-  background-color: #76BCD7;
+  background-color: #76bcd7;
   z-index: 100;
   display: flex;
   align-items: center;
@@ -309,35 +300,35 @@ body {
   .container {
     padding: 1rem;
   }
-  
+
   .content-section {
     width: 100%;
     margin-top: 7rem;
   }
-  
+
   .title {
     font-size: 2.8rem;
   }
-  
+
   .textarea {
     font-size: 1.4rem;
   }
-  
+
   .bg-circle.top-left {
     width: 25rem;
     height: 25rem;
   }
-  
+
   .bg-circle.top-right {
     width: 20rem;
     height: 20rem;
   }
-  
+
   .bg-heart.bottom-left {
     width: 22rem;
     height: 22rem;
   }
-  
+
   .bg-circle.bottom-right {
     width: 22rem;
     height: 22rem;
@@ -348,20 +339,20 @@ body {
   .content-section {
     margin-top: 6rem;
   }
-  
+
   .title {
     font-size: 2.4rem;
   }
-  
+
   .textarea {
     font-size: 1.2rem;
   }
-  
+
   .heart-icon {
     top: -8%;
     left: -2%;
   }
-  
+
   .plus-btn {
     bottom: 2rem;
     right: 2rem;

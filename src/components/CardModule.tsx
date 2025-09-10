@@ -8,7 +8,7 @@ const COLORS = [
   "#4A90E2", // azul
   "#50C878", // verde
   "#FFD700", // amarelo/dourado
-  "#9370DB"  // roxo
+  "#9370DB", // roxo
 ];
 
 interface CardModuleProps {
@@ -18,38 +18,35 @@ interface CardModuleProps {
   ageGroup: string;
 }
 
-const CardModule: FC<CardModuleProps> = ({ 
-  title, 
-  sinopsys, 
-  thumbnail, 
-  ageGroup
+const CardModule: FC<CardModuleProps> = ({
+  title,
+  sinopsys,
+  thumbnail,
+  ageGroup,
 }) => {
   // Dividir o texto da faixa etária em linhas separadas
-  const ageParts = ageGroup.split(' ');
-  
+  const ageParts = ageGroup.split(" ");
+
   // Gerar uma cor aleatória
   const randomColor = useMemo(() => {
     return COLORS[Math.floor(Math.random() * COLORS.length)];
   }, []);
-  
+
   return (
     <div className="Card">
       {/* Conteúdo do card */}
       <div className="Card-inner">
         {/* Thumbnail colada à esquerda com altura do card */}
-        <div 
-          className="Card-thumbnail" 
+        <div
+          className="Card-thumbnail"
           style={{
             borderLeft: `5px solid ${randomColor}`,
             borderTop: `5px solid ${randomColor}`,
             borderBottom: `5px solid ${randomColor}`,
-            borderRight: `5px solid ${randomColor}`
+            borderRight: `5px solid ${randomColor}`,
           }}
         >
-          <img
-            src={thumbnail}
-            alt={title}
-          />
+          <img src={thumbnail} alt={title} />
         </div>
 
         <div className="Card-content">
@@ -65,6 +62,6 @@ const CardModule: FC<CardModuleProps> = ({
       </div>
     </div>
   );
-}
+};
 
 export default CardModule;

@@ -10,7 +10,7 @@ function AgeRange() {
           <span className="checkmark"></span>
         </div>
       </div>
-      
+
       <div className="age-range-item">
         <span className="age-text">13-15 anos</span>
         <div className="checkbox-container">
@@ -18,7 +18,7 @@ function AgeRange() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default AgeRange
+export default AgeRange;

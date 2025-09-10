@@ -1,7 +1,7 @@
 type Props = {
   text: string;
   setText?: (v: string) => void; // agora opcional
-  readOnly?: boolean;            // controla modo visualização
+  readOnly?: boolean; // controla modo visualização
 };
 
 export default function ModuleText({ text, setText, readOnly = false }: Props) {

@@ -4,7 +4,7 @@
 }
 
 .categories-title {
-  font-family: 'Alexandria', sans-serif;
+  font-family: "Alexandria", sans-serif;
   font-weight: bold;
   margin-bottom: 1rem;
   text-align: left;
@@ -21,7 +21,7 @@
 
 .category-tab {
   cursor: pointer;
-  font-family: 'Alexandria', sans-serif;
+  font-family: "Alexandria", sans-serif;
   font-size: 2.25rem;
   transition: all 0.3s ease;
   padding: 0.3rem 0;
@@ -38,7 +38,7 @@
 }
 
 .category-tab.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -3px;
   left: 0;
@@ -58,11 +58,11 @@
     font-size: 12.2rem;
     margin-bottom: 1.2rem;
   }
-  
+
   .categories-tabs {
     gap: 1.2rem;
   }
-  
+
   .category-tab {
     font-size: 12.2rem;
     padding: 0.5rem 0;
@@ -74,24 +74,24 @@
     margin-top: 2.5rem;
     margin-bottom: 1rem;
   }
-  
+
   .categories-title {
     font-size: 3.5rem;
     margin-bottom: 1.2rem;
   }
-  
+
   .categories-tabs {
     justify-content: space-between;
     width: 100%;
     margin-bottom: 2.5rem;
   }
-  
+
   .category-tab {
     font-size: 2.1rem;
     padding: 0.5rem 0.8rem;
     font-weight: 500;
   }
-  
+
   .category-tab.active {
     font-size: 1.3rem;
     font-weight: 700;

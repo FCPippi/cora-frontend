@@ -3,7 +3,7 @@ type AgeGroup = "até 3 anos" | "4 a 6 anos" | "7 a 12 anos" | "13 a 17 anos";
 type Props = {
   ageGroups: Record<AgeGroup, boolean>;
   setAgeGroups: React.Dispatch<React.SetStateAction<Record<AgeGroup, boolean>>>;
-  readOnly?: boolean; 
+  readOnly?: boolean;
 };
 
 export default function ModuleAge({ ageGroups, setAgeGroups }: Props) {

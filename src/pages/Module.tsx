@@ -23,7 +23,6 @@ export default function Module() {
   const [synopsis, setSynopsis] = useState("");
   const [thumbnail, setThumbnail] = useState<File | null>(null);
   const [step, setStep] = useState(1);
-  
 
   const [ageGroups, setAgeGroups] = useState({
     "até 3 anos": false,
@@ -32,14 +31,18 @@ export default function Module() {
     "13 a 17 anos": false,
   });
 
-  const [contents, setContents] = useState([{ id_content: Date.now(), text: "" }]);
+  const [contents, setContents] = useState([
+    { id_content: Date.now(), text: "" },
+  ]);
 
   const handleAddContent = () => {
     setContents([...contents, { id_content: Date.now(), text: "" }]);
   };
 
   const handleRemoveContent = (id_content: number) => {
-    const updatedContents = contents.filter(content => content.id_content !== id_content);
+    const updatedContents = contents.filter(
+      (content) => content.id_content !== id_content
+    );
     setContents(updatedContents);
   };
 
@@ -64,7 +67,7 @@ export default function Module() {
     if (step === 2) {
       setStep(1);
     } else {
-      navigate('/contents');
+      navigate("/contents");
     }
   };
 
@@ -72,23 +75,56 @@ export default function Module() {
     <div className="container">
       <div className="top-bar">
         <button className="voltar-button" onClick={handleVoltar}>
-          <ArrowIcon className="voltar-icon" color="#FFFFFF" circleColor="transparent" /> Voltar
+          <ArrowIcon
+            className="voltar-icon"
+            color="#FFFFFF"
+            circleColor="transparent"
+          />{" "}
+          Voltar
         </button>
       </div>
       <div className="background-elements">
-        <FatCircleIcon className="bg-circle top-left" color="#7ABBD7" width="40rem" height="40rem" />
-        <CircleIcon className="bg-circle top-right" color="#FDC647" width="30rem" height="30rem" />
-        <RedHeartIcon className="bg-heart bottom-left" color="#DF3841" width="35rem" height="35rem" />
-        <CircleGreenHeartIcon className="bg-circle bottom-right" color="#61BC55" width="35rem" height="35rem" />
+        <FatCircleIcon
+          className="bg-circle top-left"
+          color="#7ABBD7"
+          width="40rem"
+          height="40rem"
+        />
+        <CircleIcon
+          className="bg-circle top-right"
+          color="#FDC647"
+          width="30rem"
+          height="30rem"
+        />
+        <RedHeartIcon
+          className="bg-heart bottom-left"
+          color="#DF3841"
+          width="35rem"
+          height="35rem"
+        />
+        <CircleGreenHeartIcon
+          className="bg-circle bottom-right"
+          color="#61BC55"
+          width="35rem"
+          height="35rem"
+        />
       </div>
 
       <div className="content-section">
-        <ModuleHeader title={title} setTitle={setTitle} synopsis={synopsis} setSynopsis={setSynopsis} />
+        <ModuleHeader
+          title={title}
+          setTitle={setTitle}
+          synopsis={synopsis}
+          setSynopsis={setSynopsis}
+        />
         <ModuleAge ageGroups={ageGroups} setAgeGroups={setAgeGroups} />
         <ModuleThumb thumbnail={thumbnail} setThumbnail={setThumbnail} />
 
         {contents.map((content, index) => (
-          <div key={content.id_content} style={{ position: "relative", marginBottom: "16px" }}>
+          <div
+            key={content.id_content}
+            style={{ position: "relative", marginBottom: "16px" }}
+          >
             <ModuleText
               text={content.text}
               setText={(newText: string) => {

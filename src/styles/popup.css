@@ -1,4 +1,3 @@
-
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -12,30 +11,18 @@
   z-index: 1000;
 }
 
-
 .popup-content {
   background: #fff;
   border-radius: 2.1rem;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: fit-content;
-  max-width: 90%; 
-
+  max-width: 90%;
 }
 
-.popup-icon{
+.popup-icon {
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
