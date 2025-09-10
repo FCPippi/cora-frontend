@@ -1,38 +1,40 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import FatCircleIcon from '../icons/FatCircleIcon';
-import CircleIcon from '../icons/CircleIcon';
-import RedHeartIcon from '../icons/RedHeartIcon';
-import CircleGreenHeartIcon from '../icons/CircleGreenHeart';
-import ArrowIcon from '../icons/ArrowIcon';
-import '../styles/Cadastro.css';
-import CoraGroupImage from '../assets/CoraGroup.png';
-import Clara from '../assets/Clara.png';
-import Vitor from '../assets/Vitor.png';
-import Rafa from '../assets/Rafa.png';
-import Cora from '../assets/Cora.png';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import FatCircleIcon from "../icons/FatCircleIcon";
+import CircleIcon from "../icons/CircleIcon";
+import RedHeartIcon from "../icons/RedHeartIcon";
+import CircleGreenHeartIcon from "../icons/CircleGreenHeartIcon";
+import ArrowIcon from "../icons/ArrowIcon";
+import "../styles/Registration.css";
+import CoraGroupImage from "../assets/CoraGroup.png";
+import Clara from "../assets/Clara.png";
+import Vitor from "../assets/Vitor.png";
+import Rafa from "../assets/Rafa.png";
+import Cora from "../assets/Cora.png";
 
-const Cadastro: React.FC = () => {
+const Registration: React.FC = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [formCompleted, setFormCompleted] = useState(false);
-  
+
   const [userData, setUserData] = useState({
-    fullName: '',
-    phone: '',
-    email: '',
-    birthDate: '',
-    password: '',
-    confirmPassword: ''
+    fullName: "",
+    phone: "",
+    email: "",
+    birthDate: "",
+    password: "",
+    confirmPassword: "",
   });
-  
+
   const [childData, setChildData] = useState({
-    fullName: '',
-    birthDate: ''
+    fullName: "",
+    birthDate: "",
   });
-  
-  const [children, setChildren] = useState<Array<{fullName: string, birthDate: string}>>([]);
+
+  const [children, setChildren] = useState<
+    Array<{ fullName: string; birthDate: string }>
+  >([]);
 
   const removeChild = (index: number) => {
     const updatedChildren = [...children];
@@ -41,118 +43,121 @@ const Cadastro: React.FC = () => {
   };
 
   const validatePhone = (phone: string): string => {
-    const numbersOnly = phone.replace(/\D/g, '');
+    const numbersOnly = phone.replace(/\D/g, "");
 
     if (numbersOnly.length < 10 || numbersOnly.length > 11) {
-      return 'Telefone inválido. Digite DDD + número (mínimo 10 dígitos)';
+      return "Telefone inválido. Digite DDD + número (mínimo 10 dígitos)";
     }
 
-    return '';
+    return "";
   };
 
   const validateEmail = (email: string): string => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return 'Email inválido';
+      return "Email inválido";
     }
-    return '';
+    return "";
   };
 
   const validatePassword = (password: string): string => {
     if (password.length < 6) {
-      return 'A senha deve ter pelo menos 6 caracteres';
+      return "A senha deve ter pelo menos 6 caracteres";
     }
-    return '';
+    return "";
   };
 
-  const validateConfirmPassword = (password: string, confirmPassword: string): string => {
+  const validateConfirmPassword = (
+    password: string,
+    confirmPassword: string
+  ): string => {
     if (password !== confirmPassword) {
-      return 'As senhas não coincidem';
+      return "As senhas não coincidem";
     }
-    return '';
+    return "";
   };
 
   const validateDate = (date: string): string => {
     const selectedDate = new Date(date);
     if (isNaN(selectedDate.getTime())) {
-      return 'Data inválida';
+      return "Data inválida";
     }
-    return '';
+    return "";
   };
 
   const handleUserDataChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     const updatedUserData = {
       ...userData,
-      [name]: value
+      [name]: value,
     };
-    
+
     setUserData(updatedUserData);
 
-    let errorMessage = '';
+    let errorMessage = "";
     switch (name) {
-      case 'phone':
+      case "phone":
         errorMessage = validatePhone(value);
         break;
-      case 'email':
+      case "email":
         errorMessage = validateEmail(value);
         break;
-      case 'password':
+      case "password":
         errorMessage = validatePassword(value);
         break;
-      case 'confirmPassword':
+      case "confirmPassword":
         errorMessage = validateConfirmPassword(updatedUserData.password, value);
         break;
-      case 'birthDate':
+      case "birthDate":
         errorMessage = validateDate(value);
         break;
     }
-    
+
     const newErrors = {
       ...errors,
-      [name]: errorMessage
+      [name]: errorMessage,
     };
     setErrors(newErrors);
-    
+
     const allFieldsFilled = Boolean(
-      updatedUserData.fullName && 
-      updatedUserData.phone && 
-      updatedUserData.email && 
-      updatedUserData.birthDate && 
-      updatedUserData.password && 
-      updatedUserData.confirmPassword
+      updatedUserData.fullName &&
+        updatedUserData.phone &&
+        updatedUserData.email &&
+        updatedUserData.birthDate &&
+        updatedUserData.password &&
+        updatedUserData.confirmPassword
     );
 
-    const hasNoErrors = Object.values(newErrors).every(error => !error);
-    
+    const hasNoErrors = Object.values(newErrors).every((error) => !error);
+
     setFormCompleted(allFieldsFilled && hasNoErrors);
   };
-  
+
   const handleChildDataChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setChildData(prevState => ({
+    setChildData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
-    
-    if (name === 'birthDate') {
+
+    if (name === "birthDate") {
       const errorMessage = validateDate(value);
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        childDateError: errorMessage
+        childDateError: errorMessage,
       }));
     }
   };
-  
+
   const addChild = () => {
     const newErrors: Record<string, string> = {};
 
     if (!childData.fullName) {
-      newErrors.childNameError = 'Nome completo é obrigatório';
+      newErrors.childNameError = "Nome completo é obrigatório";
     }
 
     if (!childData.birthDate) {
-      newErrors.childDateError = 'Data de nascimento é obrigatória';
+      newErrors.childDateError = "Data de nascimento é obrigatória";
     } else {
       const dateError = validateDate(childData.birthDate);
       if (dateError) {
@@ -160,13 +165,13 @@ const Cadastro: React.FC = () => {
       }
     }
 
-    setErrors(prev => ({...prev, ...newErrors}));
+    setErrors((prev) => ({ ...prev, ...newErrors }));
 
     if (Object.keys(newErrors).length === 0) {
-      setChildren([...children, {...childData}]);
-      setChildData({fullName: '', birthDate: ''});
-      setErrors(prev => {
-        const newErrors = {...prev};
+      setChildren([...children, { ...childData }]);
+      setChildData({ fullName: "", birthDate: "" });
+      setErrors((prev) => {
+        const newErrors = { ...prev };
         delete newErrors.childNameError;
         delete newErrors.childDateError;
         return newErrors;
@@ -174,33 +179,33 @@ const Cadastro: React.FC = () => {
     }
   };
 
-  const finalizarCadastro = () => {
-    if (children.length > 0 || (childData.fullName || childData.birthDate)) {
+  const completeRegistration = () => {
+    if (children.length > 0 || childData.fullName || childData.birthDate) {
       let allChildren = [...children];
       if (childData.fullName || childData.birthDate) {
         const newErrors: Record<string, string> = {};
-        
+
         if (!childData.fullName) {
-          newErrors.childNameError = 'Nome completo é obrigatório';
+          newErrors.childNameError = "Nome completo é obrigatório";
         }
 
         if (!childData.birthDate) {
-          newErrors.childDateError = 'Data de nascimento é obrigatória';
+          newErrors.childDateError = "Data de nascimento é obrigatória";
         } else {
           const dateError = validateDate(childData.birthDate);
           if (dateError) {
             newErrors.childDateError = dateError;
           }
         }
-        
-        setErrors(prev => ({...prev, ...newErrors}));
+
+        setErrors((prev) => ({ ...prev, ...newErrors }));
 
         if (Object.keys(newErrors).length > 0) {
           return;
         }
 
         if (childData.fullName && childData.birthDate) {
-          allChildren = [...children, {...childData}];
+          allChildren = [...children, { ...childData }];
           setChildren(allChildren);
         }
       }
@@ -211,16 +216,16 @@ const Cadastro: React.FC = () => {
         password: userData.password,
         user_type: "USER",
         profile_picture: "",
-        children: allChildren.map(child => ({
+        children: allChildren.map((child) => ({
           name: child.fullName,
-          birth_date: child.birthDate
-        }))
+          birth_date: child.birthDate,
+        })),
       };
-      
-      console.log('Dados que seriam enviados para o backend:', requestBody);
-      navigate('/login');
+
+      console.log("Dados que seriam enviados para o backend:", requestBody);
+      navigate("/login");
     } else {
-      alert('Por favor, adicione pelo menos uma criança');
+      alert("Por favor, adicione pelo menos uma criança");
     }
   };
 
@@ -228,84 +233,119 @@ const Cadastro: React.FC = () => {
     if (step === 2) {
       setStep(1);
     } else {
-      navigate('/login');
+      navigate("/login");
     }
   };
 
   return (
-    <div className="cadastro-container">
+    <div className="registration-container">
       <div className="top-bar">
         <button className="voltar-button" onClick={handleVoltar}>
-          <ArrowIcon className="voltar-icon" color="#FDC647" circleColor="#FFFFFF" /> Voltar
+          <ArrowIcon
+            className="voltar-icon"
+            color="#FDC647"
+            circleColor="#FFFFFF"
+          />{" "}
+          Voltar
         </button>
       </div>
 
       <div className="background-elements">
-        <FatCircleIcon className="bg-circle top-left" color="#7ABBD7" width={400} height={400} />
-        <CircleIcon className="bg-circle top-right" color="#FDC647" width={300} height={300} />
-        <RedHeartIcon className="bg-heart bottom-left" color="#DF3841" width={350} height={350} />
-        <CircleGreenHeartIcon className="bg-circle bottom-right" color="#61BC55" width={350} height={350} />
+        <FatCircleIcon
+          className="bg-circle top-left"
+          color="#7ABBD7"
+          width={400}
+          height={400}
+        />
+        <CircleIcon
+          className="bg-circle top-right"
+          color="#FDC647"
+          width={300}
+          height={300}
+        />
+        <RedHeartIcon
+          className="bg-heart bottom-left"
+          color="#DF3841"
+          width={350}
+          height={350}
+        />
+        <CircleGreenHeartIcon
+          className="bg-circle bottom-right"
+          color="#61BC55"
+          width={350}
+          height={350}
+        />
       </div>
 
       {step === 1 ? (
-        <div className="cadastro-content">
+        <div className="registration-content">
           <div className="illustration-section">
-            <img src={CoraGroupImage} alt="Grupo Cora" className="cora-group-image" />
+            <img
+              src={CoraGroupImage}
+              alt="Grupo Cora"
+              className="cora-group-image"
+            />
           </div>
 
           <div className="form-section">
-            <h1 className="cadastro-title">Faça seu cadastro!</h1>
-            
-            <form onSubmit={(e) => {
-              e.preventDefault();
+            <h1 className="registration-title">Faça seu cadastro!</h1>
 
-              const newErrors: Record<string, string> = {};
-              
-              if (!userData.fullName) {
-                newErrors.fullName = 'Nome completo é obrigatório';
-              }
-              
-              if (!userData.phone) {
-                newErrors.phone = 'Telefone é obrigatório';
-              } else {
-                const phoneError = validatePhone(userData.phone);
-                if (phoneError) newErrors.phone = phoneError;
-              }
-              
-              if (!userData.email) {
-                newErrors.email = 'Email é obrigatório';
-              } else {
-                const emailError = validateEmail(userData.email);
-                if (emailError) newErrors.email = emailError;
-              }
-              
-              if (!userData.birthDate) {
-                newErrors.birthDate = 'Data de nascimento é obrigatória';
-              } else {
-                const dateError = validateDate(userData.birthDate);
-                if (dateError) newErrors.birthDate = dateError;
-              }
-              
-              if (!userData.password) {
-                newErrors.password = 'Senha é obrigatória';
-              } else {
-                const passwordError = validatePassword(userData.password);
-                if (passwordError) newErrors.password = passwordError;
-              }
-              
-              if (!userData.confirmPassword) {
-                newErrors.confirmPassword = 'Confirmação de senha é obrigatória';
-              } else {
-                const confirmError = validateConfirmPassword(userData.password, userData.confirmPassword);
-                if (confirmError) newErrors.confirmPassword = confirmError;
-              }
-              
-              setErrors(newErrors);
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
 
-              if (Object.keys(newErrors).length === 0) {
-                setStep(2);
-              }
-            }}>
+                const newErrors: Record<string, string> = {};
+
+                if (!userData.fullName) {
+                  newErrors.fullName = "Nome completo é obrigatório";
+                }
+
+                if (!userData.phone) {
+                  newErrors.phone = "Telefone é obrigatório";
+                } else {
+                  const phoneError = validatePhone(userData.phone);
+                  if (phoneError) newErrors.phone = phoneError;
+                }
+
+                if (!userData.email) {
+                  newErrors.email = "Email é obrigatório";
+                } else {
+                  const emailError = validateEmail(userData.email);
+                  if (emailError) newErrors.email = emailError;
+                }
+
+                if (!userData.birthDate) {
+                  newErrors.birthDate = "Data de nascimento é obrigatória";
+                } else {
+                  const dateError = validateDate(userData.birthDate);
+                  if (dateError) newErrors.birthDate = dateError;
+                }
+
+                if (!userData.password) {
+                  newErrors.password = "Senha é obrigatória";
+                } else {
+                  const passwordError = validatePassword(userData.password);
+                  if (passwordError) newErrors.password = passwordError;
+                }
+
+                if (!userData.confirmPassword) {
+                  newErrors.confirmPassword =
+                    "Confirmação de senha é obrigatória";
+                } else {
+                  const confirmError = validateConfirmPassword(
+                    userData.password,
+                    userData.confirmPassword
+                  );
+                  if (confirmError) newErrors.confirmPassword = confirmError;
+                }
+
+                setErrors(newErrors);
+
+                if (Object.keys(newErrors).length === 0) {
+                  setStep(2);
+                }
+              }}
+            >
               <div className="form-group">
                 <label htmlFor="fullName">Nome Completo*</label>
                 <input
@@ -317,7 +357,9 @@ const Cadastro: React.FC = () => {
                   placeholder="Nome Completo"
                   required
                 />
-                {errors.fullName && <span className="error-message">{errors.fullName}</span>}
+                {errors.fullName && (
+                  <span className="error-message">{errors.fullName}</span>
+                )}
               </div>
 
               <div className="form-group">
@@ -331,7 +373,9 @@ const Cadastro: React.FC = () => {
                   placeholder="DDD + número (Ex: 99 99999-9999)"
                   required
                 />
-                {errors.phone && <span className="error-message">{errors.phone}</span>}
+                {errors.phone && (
+                  <span className="error-message">{errors.phone}</span>
+                )}
               </div>
 
               <div className="form-group">
@@ -345,7 +389,9 @@ const Cadastro: React.FC = () => {
                   placeholder="exemplo@email.com"
                   required
                 />
-                {errors.email && <span className="error-message">{errors.email}</span>}
+                {errors.email && (
+                  <span className="error-message">{errors.email}</span>
+                )}
               </div>
 
               <div className="form-group">
@@ -358,7 +404,9 @@ const Cadastro: React.FC = () => {
                   onChange={handleUserDataChange}
                   required
                 />
-                {errors.birthDate && <span className="error-message">{errors.birthDate}</span>}
+                {errors.birthDate && (
+                  <span className="error-message">{errors.birthDate}</span>
+                )}
               </div>
 
               <div className="form-group">
@@ -372,7 +420,9 @@ const Cadastro: React.FC = () => {
                   placeholder="Mínimo 6 caracteres"
                   required
                 />
-                {errors.password && <span className="error-message">{errors.password}</span>}
+                {errors.password && (
+                  <span className="error-message">{errors.password}</span>
+                )}
               </div>
 
               <div className="form-group">
@@ -386,12 +436,18 @@ const Cadastro: React.FC = () => {
                   placeholder="Confirme sua senha"
                   required
                 />
-                {errors.confirmPassword && <span className="error-message">{errors.confirmPassword}</span>}
+                {errors.confirmPassword && (
+                  <span className="error-message">
+                    {errors.confirmPassword}
+                  </span>
+                )}
               </div>
 
-              <button 
-                type="submit" 
-                className={`confirmar-button ${formCompleted ? 'completed' : ''}`}
+              <button
+                type="submit"
+                className={`confirmar-button ${
+                  formCompleted ? "completed" : ""
+                }`}
               >
                 Próximo
               </button>
@@ -399,17 +455,17 @@ const Cadastro: React.FC = () => {
           </div>
         </div>
       ) : (
-        <div className="cadastro-content child-info">
+        <div className="registration-content child-info">
           <div className="child-background">
             <img src={Vitor} alt="Vitor" className="child-avatar vitor" />
             <img src={Clara} alt="Clara" className="child-avatar clara" />
             <img src={Rafa} alt="Rafa" className="child-avatar rafa" />
             <img src={Cora} alt="Cora" className="child-avatar cora" />
           </div>
-          
+
           <div className="child-form-container">
             <h1 className="child-title">Informações da criança!</h1>
-            
+
             <form>
               <div className="form-group">
                 <label htmlFor="childFullName">Nome Completo*</label>
@@ -422,7 +478,9 @@ const Cadastro: React.FC = () => {
                   placeholder="Nome Completo"
                   required
                 />
-                {errors.childNameError && <span className="error-message">{errors.childNameError}</span>}
+                {errors.childNameError && (
+                  <span className="error-message">{errors.childNameError}</span>
+                )}
               </div>
 
               <div className="form-group">
@@ -435,9 +493,11 @@ const Cadastro: React.FC = () => {
                   onChange={handleChildDataChange}
                   required
                 />
-                {errors.childDateError && <span className="error-message">{errors.childDateError}</span>}
+                {errors.childDateError && (
+                  <span className="error-message">{errors.childDateError}</span>
+                )}
               </div>
-              
+
               {children.length > 0 && (
                 <div className="registered-children">
                   <h3>Crianças cadastradas: {children.length}</h3>
@@ -445,9 +505,11 @@ const Cadastro: React.FC = () => {
                     {children.map((child, index) => (
                       <li key={index} className="child-item">
                         <span className="child-info">
-                          {child.fullName} - {child.birthDate && new Date(child.birthDate).toLocaleDateString()}
+                          {child.fullName} -{" "}
+                          {child.birthDate &&
+                            new Date(child.birthDate).toLocaleDateString()}
                         </span>
-                        <button 
+                        <button
                           type="button"
                           className="remove-child-button"
                           onClick={() => removeChild(index)}
@@ -462,10 +524,18 @@ const Cadastro: React.FC = () => {
               )}
 
               <div className="button-group">
-                <button type="button" className="add-child-button" onClick={addChild}>
+                <button
+                  type="button"
+                  className="add-child-button"
+                  onClick={addChild}
+                >
                   Adicionar nova criança
                 </button>
-                <button type="button" className="finalizar-button" onClick={finalizarCadastro}>
+                <button
+                  type="button"
+                  className="finalizar-button"
+                  onClick={completeRegistration}
+                >
                   Finalizar cadastro
                 </button>
               </div>
@@ -477,4 +547,4 @@ const Cadastro: React.FC = () => {
   );
 };
 
-export default Cadastro;
+export default Registration;

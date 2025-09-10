@@ -6,11 +6,11 @@ interface FilterIconProps extends SVGProps<SVGSVGElement> {
   height?: string | number;
 }
 
-const FilterIcon = ({ 
-  color = "#777777", 
+const FilterIcon = ({
+  color = "#777777",
   width = "8.3rem",
   height = "8.3rem",
-  ...props 
+  ...props
 }: FilterIconProps) => (
   <svg
     width="100%"

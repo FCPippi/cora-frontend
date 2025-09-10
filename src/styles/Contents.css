@@ -1,4 +1,4 @@
-.conteudos-page {
+.contents-page {
   padding: 2rem;
   max-width: 1400px;
   margin: 0 auto;
@@ -75,8 +75,8 @@
   margin-bottom: 0.2rem;
 }
 
-.conteudos-greeting {
-  font-family: 'Alexandria', sans-serif;
+.contents-greeting {
+  font-family: "Alexandria", sans-serif;
   font-size: 3.8rem;
   font-weight: 500;
   color: #777777;
@@ -84,8 +84,8 @@
   text-align: left;
 }
 
-.conteudos-question {
-  font-family: 'Alexandria', sans-serif;
+.contents-question {
+  font-family: "Alexandria", sans-serif;
   font-size: 2.2rem;
   color: #777777;
   margin: 0.5rem 0 1rem 0;
@@ -172,33 +172,33 @@
   .card-grid {
     grid-template-columns: 1fr;
   }
-  
-  .conteudos-greeting {
+
+  .contents-greeting {
     font-size: 2.2rem;
   }
-  
-  .conteudos-question {
+
+  .contents-question {
     font-size: 1.5rem;
     margin: 0.3rem 0 0.8rem 0;
   }
-  
+
   .header-search-section {
     margin-bottom: 0.5rem;
   }
-  
+
   .filter-icon {
     width: 2.8rem;
     height: 2.8rem;
   }
-  
+
   .search-container {
     margin-bottom: 0rem;
   }
-  
-  .conteudos-page {
+
+  .contents-page {
     padding: 1rem;
   }
-  
+
   .categories-wrapper {
     padding: 0.5rem 0;
     width: 100vw;

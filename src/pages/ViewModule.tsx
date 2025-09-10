@@ -6,11 +6,11 @@ import "../styles/Module.css";
 import FatCircleIcon from "../icons/FatCircleIcon";
 import CircleIcon from "../icons/CircleIcon";
 import RedHeartIcon from "../icons/RedHeartIcon";
-import CircleGreenHeartIcon from "../icons/CircleGreenHeart";
+import CircleGreenHeartIcon from "../icons/CircleGreenHeartIcon";
 import ArrowIcon from "../icons/ArrowIcon";
 
 import { useNavigate } from "react-router-dom";
-import CircleHeartIcon from "../icons/Coração";
+import CircleHeartIcon from "../icons/CircleHeartIcon";
 
 export default function ViewModule() {
   const navigate = useNavigate();
@@ -34,9 +34,27 @@ export default function ViewModule() {
         },
         user_id: 1,
         contents: [
-          { id_content: 1, text: "Conteúdo 1", image: null, template: null, video_link: null },
-          { id_content: 2, text: "Conteúdo 2", image: null, template: null, video_link: null },
-          { id_content: 3, text: "Conteúdo 3", image: null, template: null, video_link: null },
+          {
+            id_content: 1,
+            text: "Conteúdo 1",
+            image: null,
+            template: null,
+            video_link: null,
+          },
+          {
+            id_content: 2,
+            text: "Conteúdo 2",
+            image: null,
+            template: null,
+            video_link: null,
+          },
+          {
+            id_content: 3,
+            text: "Conteúdo 3",
+            image: null,
+            template: null,
+            video_link: null,
+          },
         ],
       };
       setModuleData(module);
@@ -49,24 +67,48 @@ export default function ViewModule() {
     if (step === 2) {
       setStep(1);
     } else {
-      navigate('/conteudos');
+      navigate("/contents");
     }
   };
-
 
   return (
     <div className="container">
       <div className="top-bar">
         <button className="voltar-button" onClick={handleVoltar}>
-          <ArrowIcon className="voltar-icon" color="#FFFFFF" circleColor="transparent" /> Voltar
+          <ArrowIcon
+            className="voltar-icon"
+            color="#FFFFFF"
+            circleColor="transparent"
+          />{" "}
+          Voltar
         </button>
       </div>
 
       <div className="background-elements">
-        <FatCircleIcon className="bg-circle top-left" color="#7ABBD7" width={400} height={400} />
-        <CircleIcon className="bg-circle top-right" color="#FDC647" width={300} height={300} />
-        <RedHeartIcon className="bg-heart bottom-left" color="#DF3841" width={350} height={350} />
-        <CircleGreenHeartIcon className="bg-circle bottom-right" color="#61BC55" width={350} height={350} />
+        <FatCircleIcon
+          className="bg-circle top-left"
+          color="#7ABBD7"
+          width={400}
+          height={400}
+        />
+        <CircleIcon
+          className="bg-circle top-right"
+          color="#FDC647"
+          width={300}
+          height={300}
+        />
+        <RedHeartIcon
+          className="bg-heart bottom-left"
+          color="#DF3841"
+          width={350}
+          height={350}
+        />
+        <CircleGreenHeartIcon
+          className="bg-circle bottom-right"
+          color="#61BC55"
+          width={350}
+          height={350}
+        />
       </div>
 
       <div className="content-section">
@@ -88,13 +130,13 @@ export default function ViewModule() {
             </div>
 
             {moduleData.contents.slice(1).map((content: any) => (
-                <ModuleText
-                  key={content.id_content}
-                  text={content.text}
-                  readOnly={true}
-                />
-            ))}                
-          </> 
+              <ModuleText
+                key={content.id_content}
+                text={content.text}
+                readOnly={true}
+              />
+            ))}
+          </>
         ) : null}
       </div>
     </div>

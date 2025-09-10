@@ -8,7 +8,10 @@ interface ArrowBackIconProps extends SVGProps<SVGSVGElement> {
   height?: string | number;
 }
 
-const rotationMap: Record<NonNullable<ArrowBackIconProps["direction"]>, number> = {
+const rotationMap: Record<
+  NonNullable<ArrowBackIconProps["direction"]>,
+  number
+> = {
   back: 0,
   right: 180,
   up: 90,
@@ -35,7 +38,6 @@ const ArrowIcon = ({
       preserveAspectRatio="xMidYMid meet"
       {...props}
     >
-
       <circle cx="12" cy="12" r="10" fill={circleColor} />
 
       <path

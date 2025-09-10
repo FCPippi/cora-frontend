@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/FileUpload.css";
-import UploadIcon from "../../icons/UploadIcon";  
+import UploadIcon from "../../icons/UploadIcon";
 interface FileUploadProps {
   onChange: React.ChangeEventHandler<HTMLInputElement>;
 }

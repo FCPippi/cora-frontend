@@ -1,14 +1,19 @@
-import CircleHeartIcon from "../../icons/Coração";
+import CircleHeartIcon from "../../icons/CircleHeartIcon";
 
 type Props = {
   title: string;
   setTitle: (v: string) => void;
   synopsis: string;
   setSynopsis: (v: string) => void;
-  readOnly?: boolean; 
+  readOnly?: boolean;
 };
 
-export default function ModuleHeader({ title, setTitle, synopsis, setSynopsis }: Props) {
+export default function ModuleHeader({
+  title,
+  setTitle,
+  synopsis,
+  setSynopsis,
+}: Props) {
   return (
     <div className="container-title">
       <div className="heart-icon">

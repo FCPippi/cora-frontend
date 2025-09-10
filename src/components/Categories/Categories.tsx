@@ -8,15 +8,15 @@ export const Categories: React.FC = () => {
 
   return (
     <div className="categories-container">
-      <h1 className="categories-title">
-        Categorias
-      </h1>
+      <h1 className="categories-title">Categorias</h1>
 
       <div className="categories-tabs">
         {abas.map((aba) => (
           <div
             key={aba}
-            className={`category-tab ${abaSelecionada === aba ? 'active' : 'inactive'}`}
+            className={`category-tab ${
+              abaSelecionada === aba ? "active" : "inactive"
+            }`}
             onClick={() => setAbaSelecionada(aba)}
           >
             {aba}
