@@ -30,10 +30,10 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
-        <Route path="/criar-modulo" element={<Module />} />
-        <Route path="/modulo" element={<ViewModule />} />
+        <Route path="/create-module" element={<Module />} />
+        <Route path="/module" element={<ViewModule />} />
         <Route path="/popup" element={<Popup />} />
-        <Route path="/faixa-etaria" element={<AgeRange />} />
+        <Route path="/age-range" element={<AgeRange />} />
         <Route
           path="/card-module"
           element={
@@ -48,7 +48,7 @@ function App() {
 
         <Route element={<Layout />}>
           <Route
-            path="/conta"
+            path="/account"
             element={
               <div style={{ padding: "2rem", textAlign: "center" }}>
                 Página da Conta
@@ -65,7 +65,7 @@ function App() {
             }
           />
           <Route
-            path="/especialistas"
+            path="/specialists"
             element={
               <div style={{ padding: "2rem", textAlign: "center" }}>
                 Página dos Especialistas
